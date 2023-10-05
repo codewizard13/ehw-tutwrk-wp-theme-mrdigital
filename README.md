@@ -26,6 +26,16 @@
 
 Learn how to create custom WordPress theme hand-coding from scratch by following tutorial by YouTube channel **[Mr Digital](https://www.youtube.com/@mrdigitalau)**
 
+
+### Tutorial Info
+
+- Title: WordPress Theme Development From Scratch - 3.  Enqueuing CSS and JS to WordPress theme (2019)
+- Full URL: https://www.youtube.com/watch?v=KtMwTBl-j8I&list=PLgFB6lmeXFOpHnNmQ4fdIYA5X_9XhjJ9d&index=3
+- Base URL: https://www.youtube.com/watch?v=KtMwTBl-j8I
+- Channel: Mr Digital
+- Channel URL: https://www.youtube.com/@mrdigitalau
+- Avatar URL: https://yt3.ggpht.com/ytc/APkrFKbYApVma-AuENTW0cGN27QJCbSiXnjiNufZteBT=s88-c-k-c0x00ffffff-no-rj
+
 ## NOTES
 
 - screenshot.png = 1200x900
