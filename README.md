@@ -21,6 +21,11 @@
 
 `Tutwrk` `WordPress` `WordPress Themes` `Themes from Scratch`
 
+
+## PURPOSE
+
+Learn how to create custom WordPress theme hand-coding from scratch by following tutorial by YouTube channel **[Mr Digital](https://www.youtube.com/@mrdigitalau)**
+
 ## NOTES
 
 - screenshot.png = 1200x900
