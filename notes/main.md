@@ -133,12 +133,29 @@ wp_head() and wp_footer() are similar to hooks that inject styles into header an
 - We are going to be installing **Bootstrap**
 
 - Download compiled css and js from [getbootstrap.com](getbootstrap.com)
-- Unzip and drag css/ and js/ folders into your theme root
+- Unzip and drag **css/** and **js/** folders into your theme root
 - Create an **images/** folder in theme root also
 
-@@ 19:20
+@@ 9:19
 
+#### Enqueue Styles in functions.php:
 
+- Add **load_css()** function to functions.php
+- Register bootstrap stylesheet
+  - Give it a handle first -- could be "clownshoes", but "bootstrap" makes more sense
+  - Use the .min version of bootstrap.css because it saves loading time **#performance**
+  - Then tell wordpress where to find the bootstrap css file with **get_template_directory_uri()**
+  - The third argument is a list of dependencies (other stylesheets this one may depend on). If not, just type `array(),`
+  - Fourth arg is version -- can put `false`
+  - Fifth arg is media, as in for responsive media queries. Just type 'all' unless you have reason not to
+
+- Immediately after creating function, call it with `wp_enqueue_style('bootstrap')`
+
+###### DEF: **get_template_directory_uri():** tells WP the root of the stylesheet directory
+
+```php
+
+```
 
 
 
