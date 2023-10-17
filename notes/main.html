@@ -517,7 +517,7 @@ code {
 <p>Create an <strong>images/</strong> folder in theme root also</p>
 </li>
 </ul>
-<p>@@ 9:19</p>
+<h4 id="919---register-styles">@@ 9:19 - Register Styles</h4>
 <h4 id="enqueue-styles-in-functionsphp">Enqueue Styles in functions.php:</h4>
 <ul>
 <li>
@@ -658,8 +658,7 @@ add_action(<span class="hljs-string">'wp_enqueue_scripts'</span>, <span class="h
 <p>For testing, type &quot;THIS IS THE CONTENT SECTION&quot; in <strong>section-content.php</strong></p>
 </li>
 </ul>
-<p>@@ 2:50</p>
-<h4 id="pulling-content-from-database">Pulling Content from Database</h4>
+<h4 id="250---pulling-content-from-database">@@ 2:50 - Pulling Content from Database</h4>
 <ul>
 <li>Now we are going to start pulling content from the database</li>
 <li>The following basically means <strong>if we have some posts, loop through them and instantiate each one until done</strong></li>
@@ -679,13 +678,143 @@ add_action(<span class="hljs-string">'wp_enqueue_scripts'</span>, <span class="h
 
 <span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">endwhile</span>; <span class="hljs-keyword">else</span>: <span class="hljs-keyword">endif</span>; <span class="hljs-meta">?&gt;</span>
 </div></code></pre>
-<style>
-h4[id*="@@"] {
-  background: bisque;
-  padding: 1rem;
-}
-</style>
 <h4 id="458---page-templates">@@ 4:58 - Page Templates</h4>
+<ul>
+<li>
+<p>Create page <strong>About Us</strong> and type some text in content editor</p>
+</li>
+<li>
+<p><strong>#GOTCHA:</strong> About Us page is blank because the front-page.php only works for the homepage, but every other page uses the <strong>page.php</strong> template</p>
+</li>
+<li>
+<p>In <strong>page.php</strong> add &quot;This is a page template&quot; as the content</p>
+</li>
+<li>
+<p>Now when you refresh the about-us page it should show that text</p>
+</li>
+<li>
+<p>Next, create a <strong>Contact Us</strong> page, but leave the content blank. When you view it, it will automatically display the dummy text</p>
+</li>
+<li>
+<p>Copy-paste from <strong>front-page.php</strong> into into <strong>page.php</strong></p>
+</li>
+</ul>
+<hr>
+<h3 id="how-to-give-each-page-its-own-template">How to give each page its own template</h3>
+<h4 id="700---contact-us-template">@@ 7:00 - Contact Us Template</h4>
+<ul>
+<li>
+<p>Create new template for contact us page in theme root called <strong>template-contactus.php</strong></p>
+</li>
+<li>
+<p>First tell wordpress this is a template with:</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/*
+Template Name: Contact Us
+*/</span>
+<span class="hljs-meta">?&gt;</span>
+
+This is the CONTACT PAGE template
+</div></code></pre>
+<ul>
+<li>
+<p>Now, in the Contact Us page editor, refresh the page and you should see a &quot;Template&quot; dropdown option in the right sidebar.</p>
+</li>
+<li>
+<p>If we choose &quot;Contact Us&quot; in the &quot;Template&quot; dropdown list and update, we will be using the &quot;Contact Us&quot; template</p>
+</li>
+<li>
+<p>Copy-Paste content from page.php and replace dummy text in <strong>template-contactus.php</strong></p>
+</li>
+<li>
+<p>Now, <strong>template-contactus.php</strong> looks like this:</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/*
+Template Name: Contact Us
+*/</span>
+<span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-meta">&lt;?php</span> get_header();  <span class="hljs-meta">?&gt;</span>
+
+  &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">container</span>"&gt;
+    
+    &lt;<span class="hljs-title">h1</span>&gt;&lt;?<span class="hljs-title">php</span> <span class="hljs-title">the_title</span>(); ?&gt;&lt;/<span class="hljs-title">h1</span>&gt;
+
+    &lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_template_part</span>('<span class="hljs-title">includes</span>/<span class="hljs-title">section</span>', '<span class="hljs-title">content</span>'); ?&gt;
+
+  &lt;/<span class="hljs-title">div</span>&gt;
+
+
+&lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_footer</span>();  ?&gt;
+</span></div></code></pre>
+<h4 id="910---two-column-template-bootstrap">@@ 9:10 - Two Column Template (Bootstrap)</h4>
+<ul>
+<li>Add bootstrap classes to <strong>template-contactus.php</strong>. This is what the file should look like now:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span>
+<span class="hljs-comment">/*
+Template Name: Contact Us
+*/</span>
+<span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-meta">&lt;?php</span> get_header();  <span class="hljs-meta">?&gt;</span>
+
+  &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">container</span>"&gt;
+    
+    &lt;<span class="hljs-title">h1</span>&gt;&lt;?<span class="hljs-title">php</span> <span class="hljs-title">the_title</span>(); ?&gt;&lt;/<span class="hljs-title">h1</span>&gt;
+
+    &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>="<span class="hljs-title">row</span>"&gt;
+
+      &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>="<span class="hljs-title">col</span>-<span class="hljs-title">lg</span>-6"&gt;<span class="hljs-title">This</span> <span class="hljs-title">is</span> <span class="hljs-title">where</span> <span class="hljs-title">the</span> <span class="hljs-title">contact</span> <span class="hljs-title">form</span> <span class="hljs-title">goes</span>&lt;/<span class="hljs-title">div</span>&gt;
+      &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>="<span class="hljs-title">col</span>-<span class="hljs-title">lg</span>-6"&gt;
+        &lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_template_part</span>('<span class="hljs-title">includes</span>/<span class="hljs-title">section</span>', '<span class="hljs-title">content</span>'); ?&gt;
+      &lt;/<span class="hljs-title">div</span>&gt;
+
+    &lt;/<span class="hljs-title">div</span>&gt;
+
+    &lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_template_part</span>('<span class="hljs-title">includes</span>/<span class="hljs-title">section</span>', '<span class="hljs-title">content</span>'); ?&gt;
+
+  &lt;/<span class="hljs-title">div</span>&gt;
+
+&lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_footer</span>();  ?&gt;
+</span></div></code></pre>
+<h4 id="1010---use-different-headers-on-different-pages">@@ 10:10 - Use different headers on different pages</h4>
+<ul>
+<li>In theme root create new header template <strong>header-secondary.php</strong> with dummy text content of &quot;This is the SECONDARY HEADER&quot;.</li>
+<li>In <strong>front-page.php</strong> add <code>'secondary'</code> as the <strong>get_header()</strong> argument like this:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span> get_header(<span class="hljs-string">'secondary'</span>); <span class="hljs-meta">?&gt;</span>
+</div></code></pre>
+<ul>
+<li>
+<p>To test if it worked, view home page source and the dummy text should be at the top.</p>
+</li>
+<li>
+<p>Copy the contents of header.php into header-secondary.php so the final result is:</p>
+</li>
+</ul>
+<pre class="hljs"><code><div>&lt;!DOCTYPE html&gt;
+&lt;html lang=<span class="hljs-string">"en"</span>&gt;
+&lt;head&gt;
+  &lt;meta charset=<span class="hljs-string">"UTF-8"</span>&gt;
+  &lt;meta http-equiv=<span class="hljs-string">"X-UA-Compatible"</span> content=<span class="hljs-string">"IE=edge"</span>&gt;
+  &lt;meta name=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+
+  <span class="hljs-meta">&lt;?php</span> wp_head(); <span class="hljs-meta">?&gt;</span>
+
+&lt;/head&gt;
+&lt;body&gt;
+  
+  This is the SECONDARY HEADER
+</div></code></pre>
+<ul>
+<li>You could do the same thing for the footer by creating <strong>footer-whatever.php</strong></li>
+</ul>
 <h2 id="bookmark">BOOKMARK</h2>
 <hr>
 
