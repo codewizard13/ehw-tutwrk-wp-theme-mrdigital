@@ -223,6 +223,23 @@ function load_js() {
 - Now, if we refresh the page source, jQuery will be in our header.
 
 
+### VID: 04 - Template Parts & Page Templates
+
+- **#GOTCHA:** Discrepancy - Offscreen after the last vid (03) he added the `div class='container'` section with the title to **front-page.php** like this:
+
+```php
+<?php get_header();  ?>
+
+  <div class="container">
+    
+    <h1><?php the_title(); ?></h1>
+
+  </div>
+
+
+<?php get_footer();  ?>
+```
+
 
 
 
