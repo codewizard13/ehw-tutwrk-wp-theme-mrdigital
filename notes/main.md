@@ -274,6 +274,7 @@ function load_js() {
 
 - Next, create a **Contact Us** page, but leave the content blank. When you view it, it will automatically display the dummy text
 
+- Copy-paste from **front-page.php** into into **page.php**
 
 
 
