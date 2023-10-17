@@ -191,6 +191,54 @@ add_action('wp_enqueue_scripts', 'load_css');
 
 - Now, if we go to the homepage and refresh, it will still be blank, but if you view the source code (**CTRL-U**) you should see `/css/bootstrap.min.css` in a `link rel` tag.
 
+- Next, we will load JavaScripts for Bootstrap
+- **#GOTCHA:** Bootstrap does have jQuery as a dependency, so ...
+- WordPress automatically ships with jQuery
+- **jQuery Migrate:** a patch provided by WordPress which helps you use jQuery plugins that require a newer version jQuery; for backward compatibility
+- Version: false
+- last parameter = "in footer": true
+
+```php
+function load_js() {
+
+  wp_register_script('bootstrap-scripts', get_template_directory_uri() . '/js/bootstrap.min.js',
+  'jquery', false, true);
+  wp_enqueue_script('bootstrap-scripts');
+
+}
+add_action('wp_enqueue_scripts', 'load_js');
+```
+
+- Now, as long as you have registered an enqueued the script and done add action, you should see `/js/bootstrap.min.js` show up in a `script` tag before the closing body tag in the page source.
+
+- **#GOTCHA:** If we search for jQuery in the page source, although WordPress automatically includes it in the core, it is not included on the page. To include in your custom theme we need to enqueue it as a script. Enqueue jQuery before the register_script() statements in **load_js()**:
+
+```php
+function load_js() {
+
+  wp_enqueue_script('jquery');
+  wp_register_script('bootstrap-scripts', ...
+```
+
+- Now, if we refresh the page source, jQuery will be in our header.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## BOOKMARK
 
