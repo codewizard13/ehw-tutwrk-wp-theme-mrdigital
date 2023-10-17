@@ -18,6 +18,14 @@ h3 {
   color: white;
   padding: .3rem 1rem
 }
+#bookmark {
+  background: orange;
+  display: inline-block;
+  padding: 1rem;
+  border: solid green 4px;
+  transform: skew(20deg)
+}
+
 </style>
 
 # TUTORIAL NOTES
