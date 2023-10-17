@@ -324,11 +324,68 @@ Template Name: Contact Us
 
 #### @@ 9:10 - Two Column Template (Bootstrap)
 
+- Add bootstrap classes to **template-contactus.php**. This is what the file should look like now:
 
+```php
+<?php
+/*
+Template Name: Contact Us
+*/
+?>
 
+<?php get_header();  ?>
 
+  <div class="container">
+    
+    <h1><?php the_title(); ?></h1>
 
+    <div class="row">
 
+      <div class="col-lg-6">This is where the contact form goes</div>
+      <div class="col-lg-6">
+        <?php get_template_part('includes/section', 'content'); ?>
+      </div>
+
+    </div>
+
+    <?php get_template_part('includes/section', 'content'); ?>
+
+  </div>
+
+<?php get_footer();  ?>
+```
+
+#### @@ 10:10 - Use different headers on different pages
+
+- In theme root create new header template **header-secondary.php** with dummy text content of "This is the SECONDARY HEADER".
+- In **front-page.php** add `'secondary'` as the **get_header()** argument like this:
+
+```php
+<?php get_header('secondary'); ?>
+```
+
+- To test if it worked, view home page source and the dummy text should be at the top.
+
+- Copy the contents of header.php into header-secondary.php so the final result is:
+
+```php
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <?php wp_head(); ?>
+
+</head>
+<body>
+  
+  This is the SECONDARY HEADER
+```
+
+- You could do the same thing for the footer by creating **footer-whatever.php**
 
 
 
