@@ -394,10 +394,28 @@ Template Name: Contact Us
 - Create new file **main.css** in css/ folder
 
 
-#### #GOTCHA: Something 
-- Copy-paste
+#### #GOTCHA: Make sure you enqueue your custom styles AFTER all others because you want your styles to be able to override the defaults, bootstrap, and all others.
+
+- In **functions.php**, duplicate the bootstrap register and enqueue style statements in **load_css()** and replace "bootstrap" and "bootrap.min" with "**main**" like this:
+
+```php
+function load_css() {
+
+  wp_register_style(
+    'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css',
+    array(), false, 'all');
+  wp_enqueue_style('bootstrap');
 
 
+  wp_register_style(
+    'main', get_template_directory_uri() . '/css/main.css',
+    array(), false, 'all');
+  wp_enqueue_style('main');
+
+}
+```
+
+- Verify that the style is enqueued by checking the home page source. Your 'main.css' should appear under the line with 'bootstrap.min.css'.
 
 
 
