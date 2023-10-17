@@ -297,7 +297,7 @@ This is the CONTACT PAGE template
 - Now, in the Contact Us page editor, refresh the page and you should see a "Template" dropdown option in the right sidebar.
 - If we choose "Contact Us" in the "Template" dropdown list and update, we will be using the "Contact Us" template
 
-
+- Copy-Paste content from page.php and replace dummy text in **template-contactus.php**
 
 
 
