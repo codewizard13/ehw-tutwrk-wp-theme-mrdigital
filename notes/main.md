@@ -213,29 +213,59 @@ function load_js() {
 <?php get_footer();  ?>
 ```
 
+- ADD some text to the content area on **home** page. 
+- I added lorem ipsum from https://trumpipsum.net/
+
+> You know, it really doesn’t matter what you write as long as you’ve got a young, and beautiful, piece of text. You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina. Look at that text! Would anyone use that? Can you imagine that, the text of your next webpage?! I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? Despite the constant negative ipsum covfefe.
+> 
+> You're telling the enemy exactly what you're going to do. No wonder you've been fighting Lorem Ipsum your entire adult life. An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.
+> 
+> An 'extremely credible source' has called my office and told me that Lorem Ipsum's birth certificate is a fraud. I think my strongest asset maybe by far is my temperament. I have a placeholding temperament.
+> 
+> An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud. Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. An 'extremely credible source' has called my office and told me that Lorem Ipsum's birth certificate is a fraud.
+
 - We'll create some template parts on 
   
 ###### DEF: template part - sections to help organize WordPress web page parts
 
 - Create new folder **includes/**
 - Create new file in includes/ **section-content.php**
-- Call section-content.php as template part in **front-page.php**:
+- Call section-content.php as template part in **front-page.php** with **get_template_part()** function:
 
 ```php
-
+<?php get_template_part('includes/section', 'content'); ?>
 ```
 
+- **get_template_part()**:
+  - 1st arg: relative path with the first part of the name before the hyphen
+  - 2nd arg: second part of the file name
 
+- For testing, type "THIS IS THE CONTENT SECTION" in **section-content.php**
 
+@@ 2:50
 
+#### Pulling Content from Database
 
+- Now we are going to start pulling content from the database
+- The following basically means **if we have some posts, loop through them and instantiate each one until done**
 
+```php
+<?php if( have_posts() ): while( have_posts() ): the_post(); ?>
 
+  // DO STUFF
 
+<?php endwhile; else: endif; ?>
+```
 
+- Now, show the content by replacing "// DO STUFF" with a call to **the_content()** like this:
 
+```php
+<?php if( have_posts() ): while( have_posts() ): the_post(); ?>
 
+  <?php the_content(); ?>
 
+<?php endwhile; else: endif; ?>
+```
 
 
 
