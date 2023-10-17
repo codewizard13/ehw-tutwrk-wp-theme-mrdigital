@@ -417,11 +417,22 @@ function load_css() {
 
 - Verify that the style is enqueued by checking the home page source. Your 'main.css' should appear under the line with 'bootstrap.min.css'.
 
+#### @@ 2:11 - Tidy up our theme
 
+- In **header.php** add `header` tag below the opening body tag
+- In **main.css** style the header with:
 
+```css
+header {
+  background: #111;
+  width: 100%;
+  height: 100px;
+}
+```
 
+#### #GOTCHA: Make sure to remove the `'secondary'` argument from the **get_header()** statement in **front-page.php** or the new header style won't display. 
 
-
+- Edit your profile and uncheck "Show Toolbar when viewing site"
 
 
 ## BOOKMARK
