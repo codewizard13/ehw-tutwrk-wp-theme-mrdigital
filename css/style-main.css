@@ -11,7 +11,7 @@
     color: white;
     font-weight: 700;
 }
-h3 {
+h3[id^="VID"] {
   background: olive;
   color: white;
   padding: .3rem 1rem

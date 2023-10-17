@@ -276,7 +276,8 @@ function load_js() {
 
 - Copy-paste from **front-page.php** into into **page.php**
 
-#### How to give each page its own template
+---
+### How to give each page its own template
 
 #### @@ 7:00 - Contact Us Template
 
@@ -298,6 +299,28 @@ This is the CONTACT PAGE template
 - If we choose "Contact Us" in the "Template" dropdown list and update, we will be using the "Contact Us" template
 
 - Copy-Paste content from page.php and replace dummy text in **template-contactus.php**
+- Now, **template-contactus.php** looks like this:
+
+```php
+<?php
+/*
+Template Name: Contact Us
+*/
+?>
+
+<?php get_header();  ?>
+
+  <div class="container">
+    
+    <h1><?php the_title(); ?></h1>
+
+    <?php get_template_part('includes/section', 'content'); ?>
+
+  </div>
+
+
+<?php get_footer();  ?>
+```
 
 
 
