@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="../css/style-main.css" />
+<link rel="stylesheet" href="../css/style-notes.css" />
 
 # TUTORIAL NOTES
 
