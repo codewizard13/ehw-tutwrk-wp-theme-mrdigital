@@ -118,7 +118,7 @@ wp_head() and wp_footer() are similar to hooks that inject styles into header an
 - Unzip and drag **css/** and **js/** folders into your theme root
 - Create an **images/** folder in theme root also
 
-@@ 9:19
+#### @@ 9:19 - Register Styles
 
 #### Enqueue Styles in functions.php:
 
@@ -242,9 +242,7 @@ function load_js() {
 
 - For testing, type "THIS IS THE CONTENT SECTION" in **section-content.php**
 
-@@ 2:50
-
-#### Pulling Content from Database
+#### @@ 2:50 - Pulling Content from Database
 
 - Now we are going to start pulling content from the database
 - The following basically means **if we have some posts, loop through them and instantiate each one until done**
