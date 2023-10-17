@@ -213,8 +213,17 @@ function load_js() {
 <?php get_footer();  ?>
 ```
 
-- ****
+- We'll create some template parts on 
+  
+###### DEF: template part - sections to help organize WordPress web page parts
 
+- Create new folder **includes/**
+- Create new file in includes/ **section-content.php**
+- Call section-content.php as template part in **front-page.php**:
+
+```php
+
+```
 
 
 
