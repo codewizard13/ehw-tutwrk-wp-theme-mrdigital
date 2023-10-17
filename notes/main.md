@@ -13,14 +13,16 @@
     color: white;
     font-weight: 700;
 }
-.bookmark-link a {
-  
+h3 {
+  background: olive;
+  color: white;
+  padding: .3rem 1rem
 }
 </style>
 
 # TUTORIAL NOTES
 
-<a class="bookmark-link" href="#bookmark">BOOKMARK</a>
+
 
 
 ### VID: 01-02
@@ -157,6 +159,6 @@ wp_head() and wp_footer() are similar to hooks that inject styles into header an
 
 ```
 
-
+<a class="bookmark-link" href="#bookmark">BOOKMARK</a>
 
 ---
