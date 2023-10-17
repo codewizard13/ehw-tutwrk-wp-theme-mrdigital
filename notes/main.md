@@ -322,7 +322,7 @@ Template Name: Contact Us
 <?php get_footer();  ?>
 ```
 
-
+#### @@ 9:10 - Two Column Template (Bootstrap)
 
 
 
