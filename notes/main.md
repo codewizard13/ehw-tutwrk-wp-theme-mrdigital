@@ -434,6 +434,51 @@ header {
 
 - Edit your profile and uncheck "Show Toolbar when viewing site"
 
+- Wrap `div.container` tag in **front-page.php** with `section.page-wrap` tag:
+
+```php
+<?php get_header();  ?>
+
+<section class="page-wrap">
+  <div class="container">
+
+    <h1><?php the_title(); ?></h1>
+
+    <?php get_template_part('includes/section', 'content'); ?>
+
+  </div>
+</section>
+
+<?php get_footer();  ?>
+```
+
+STOPPED @ 4:21
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## BOOKMARK
 

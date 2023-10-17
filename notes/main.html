@@ -365,7 +365,7 @@ code {
           : 'default'
     });
   </script>
-<link rel="stylesheet" href="../css/style-main.css" />
+<link rel="stylesheet" href="../css/style-notes.css" />
 <h1 id="tutorial-notes">TUTORIAL NOTES</h1>
 <p><a class="bookmark-link" href="#bookmark">JUMP TO BOOKMARK</a></p>
 <h3 id="vid-01-02">VID: 01-02</h3>
@@ -820,20 +820,63 @@ Template Name: Contact Us
 <ul>
 <li>Create new file <strong>main.css</strong> in css/ folder</li>
 </ul>
-<style>
-h4 {
-  padding: 1rem;
-  border: solid 2px gray;
-  border-radius: 1rem;
-}
-h4[id^"gotcha"] {
-  background: green !important;
-}
-</style>
-<h4 id="gotcha-something">#GOTCHA: Something</h4>
+<h4 id="gotcha-make-sure-you-enqueue-your-custom-styles-after-all-others-because-you-want-your-styles-to-be-able-to-override-the-defaults-bootstrap-and-all-others">#GOTCHA: Make sure you enqueue your custom styles AFTER all others because you want your styles to be able to override the defaults, bootstrap, and all others.</h4>
 <ul>
-<li>Copy-paste</li>
+<li>In <strong>functions.php</strong>, duplicate the bootstrap register and enqueue style statements in <strong>load_css()</strong> and replace &quot;bootstrap&quot; and &quot;bootrap.min&quot; with &quot;<strong>main</strong>&quot; like this:</li>
 </ul>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">load_css</span><span class="hljs-params">()</span> </span>{
+
+  wp_register_style(
+    <span class="hljs-string">'bootstrap'</span>, get_template_directory_uri() . <span class="hljs-string">'/css/bootstrap.min.css'</span>,
+    <span class="hljs-keyword">array</span>(), <span class="hljs-keyword">false</span>, <span class="hljs-string">'all'</span>);
+  wp_enqueue_style(<span class="hljs-string">'bootstrap'</span>);
+
+
+  wp_register_style(
+    <span class="hljs-string">'main'</span>, get_template_directory_uri() . <span class="hljs-string">'/css/main.css'</span>,
+    <span class="hljs-keyword">array</span>(), <span class="hljs-keyword">false</span>, <span class="hljs-string">'all'</span>);
+  wp_enqueue_style(<span class="hljs-string">'main'</span>);
+
+}
+</div></code></pre>
+<ul>
+<li>Verify that the style is enqueued by checking the home page source. Your 'main.css' should appear under the line with 'bootstrap.min.css'.</li>
+</ul>
+<h4 id="211---tidy-up-our-theme">@@ 2:11 - Tidy up our theme</h4>
+<ul>
+<li>In <strong>header.php</strong> add <code>header</code> tag below the opening body tag</li>
+<li>In <strong>main.css</strong> style the header with:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">header</span> {
+  <span class="hljs-attribute">background</span>: <span class="hljs-number">#111</span>;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100%</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+}
+</div></code></pre>
+<h4 id="gotcha-make-sure-to-remove-the-secondary-argument-from-the-getheader-statement-in-front-pagephp-or-the-new-header-style-wont-display">#GOTCHA: Make sure to remove the <code>'secondary'</code> argument from the <strong>get_header()</strong> statement in <strong>front-page.php</strong> or the new header style won't display.</h4>
+<ul>
+<li>
+<p>Edit your profile and uncheck &quot;Show Toolbar when viewing site&quot;</p>
+</li>
+<li>
+<p>Wrap <code>div.container</code> tag in <strong>front-page.php</strong> with <code>section.page-wrap</code> tag:</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span> get_header();  <span class="hljs-meta">?&gt;</span>
+
+&lt;section <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">page</span>-<span class="hljs-title">wrap</span>"&gt;
+  &lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>="<span class="hljs-title">container</span>"&gt;
+
+    &lt;<span class="hljs-title">h1</span>&gt;&lt;?<span class="hljs-title">php</span> <span class="hljs-title">the_title</span>(); ?&gt;&lt;/<span class="hljs-title">h1</span>&gt;
+
+    &lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_template_part</span>('<span class="hljs-title">includes</span>/<span class="hljs-title">section</span>', '<span class="hljs-title">content</span>'); ?&gt;
+
+  &lt;/<span class="hljs-title">div</span>&gt;
+&lt;/<span class="hljs-title">section</span>&gt;
+
+&lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_footer</span>();  ?&gt;
+</span></div></code></pre>
+<p>STOPPED @ 4:21</p>
 <h2 id="bookmark">BOOKMARK</h2>
 <hr>
 
