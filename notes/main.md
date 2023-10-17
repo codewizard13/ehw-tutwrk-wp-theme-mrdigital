@@ -164,8 +164,33 @@ wp_head() and wp_footer() are similar to hooks that inject styles into header an
 ###### DEF: **get_template_directory_uri():** tells WP the root of the stylesheet directory
 
 ```php
+function load_css() {
+
+  wp_register_style(
+    'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css',
+    array(), false, 'all');
+  wp_enqueue_style('bootstrap');
+
+}
 
 ```
+
+- Add the style to the WP boot sequence with **add_action()**:
+
+```php
+function load_css() {
+
+  wp_register_style(
+    'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css',
+    array(), false, 'all');
+  wp_enqueue_style('bootstrap');
+
+}
+add_action('wp_enqueue_scripts', 'load_css');
+```
+
+- Now, if we go to the homepage and refresh, it will still be blank, but if you view the source code (**CTRL-U**) you should see `/css/bootstrap.min.css` in a `link rel` tag.
+
 
 ## BOOKMARK
 
