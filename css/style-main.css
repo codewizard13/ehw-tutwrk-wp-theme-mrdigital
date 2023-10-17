@@ -1,0 +1,32 @@
+.error {
+	color: brown;
+	font-weight: bold;
+	background: pink;
+	padding: 2rem;
+}
+.bookmark-link {
+    background: orange !important;
+    padding: .4rem 1rem;
+    border: solid 1px brown;
+    color: white;
+    font-weight: 700;
+}
+h3 {
+  background: olive;
+  color: white;
+  padding: .3rem 1rem
+}
+#bookmark {
+  background: orange;
+  display: inline-block;
+  padding: 1rem;
+  border: solid green 4px;
+  transform: skew(20deg)
+}
+/* H6 is reserved for definitions */
+h6 {
+  padding: 1rem;
+  border: solid gray 2px;
+  border-radius: 1rem;
+  background: #ffffe3;
+}

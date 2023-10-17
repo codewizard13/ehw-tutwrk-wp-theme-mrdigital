@@ -1,32 +1,4 @@
-<link rel="stylesheet" href="css/ehd-course-notes.css" />
-<style>
-.error {
-	color: brown;
-	font-weight: bold;
-	background: pink;
-	padding: 2rem;
-}
-.bookmark-link {
-    background: orange !important;
-    padding: .4rem 1rem;
-    border: solid 1px brown;
-    color: white;
-    font-weight: 700;
-}
-h3 {
-  background: olive;
-  color: white;
-  padding: .3rem 1rem
-}
-#bookmark {
-  background: orange;
-  display: inline-block;
-  padding: 1rem;
-  border: solid green 4px;
-  transform: skew(20deg)
-}
-
-</style>
+<link rel="stylesheet" href="../css/style-main.css" />
 
 # TUTORIAL NOTES
 
@@ -161,6 +133,7 @@ wp_head() and wp_footer() are similar to hooks that inject styles into header an
 
 - Immediately after creating function, call it with `wp_enqueue_style('bootstrap')`
 
+
 ###### DEF: **get_template_directory_uri():** tells WP the root of the stylesheet directory
 
 ```php
@@ -240,6 +213,7 @@ function load_js() {
 <?php get_footer();  ?>
 ```
 
+- ****
 
 
 
