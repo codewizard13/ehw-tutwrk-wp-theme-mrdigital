@@ -30,3 +30,9 @@ h6 {
   border-radius: 1rem;
   background: #ffffe3;
 }
+
+/* H4 video time stamps */
+h4[id*="---"] {
+  background: bisque;
+  padding: 1rem;
+}

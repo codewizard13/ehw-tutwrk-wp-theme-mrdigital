@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>main.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<link rel="stylesheet" href="../css/style-main.css" />
+<h1 id="tutorial-notes">TUTORIAL NOTES</h1>
+<p><a class="bookmark-link" href="#bookmark">JUMP TO BOOKMARK</a></p>
+<h3 id="vid-01-02">VID: 01-02</h3>
+<ul>
+<li>screenshot.png = 1200x900</li>
+<li>Create 10 templates:
+<ul>
+<li>functions.php: default plugin for WP</li>
+<li>page.php: template for all page</li>
+<li>single.php: single blog post template</li>
+<li>archive.php: post lists pages</li>
+<li>front-page.php: automatically attaches itself to your homepage. This template automatically loads on the front page</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="vid-03">VID: 03</h3>
+<h4 id="main-theme-template-files">Main Theme Template Files:</h4>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>functions.php</strong></td>
+<td>default plugin for WP. Adds additional functionality that WP core is missing</td>
+</tr>
+<tr>
+<td><strong>page.php</strong></td>
+<td>default page template</td>
+</tr>
+<tr>
+<td><strong>single.php</strong></td>
+<td>single blog post template</td>
+</tr>
+<tr>
+<td><strong>index.php</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>front-page.php</strong></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>archive.php</strong></td>
+<td>post list pages</td>
+</tr>
+<tr>
+<td><strong>search.php</strong></td>
+<td>search results</td>
+</tr>
+<tr>
+<td><strong>404.php</strong></td>
+<td>page not found</td>
+</tr>
+<tr>
+<td><strong>header.php</strong></td>
+<td>default site header</td>
+</tr>
+<tr>
+<td><strong>footer.php</strong></td>
+<td>default site footer</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p><strong>functions.php:</strong></p>
+<ul>
+<li>Create template file: <strong>header.php</strong></li>
+<li>Create template file: <strong>footer.php</strong></li>
+</ul>
+<hr>
+<ul>
+<li>Add header.php to front-page.php with:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span> get_header(); <span class="hljs-meta">?&gt;</span>
+</div></code></pre>
+<ul>
+<li>In header we put an <strong>html scaffold</strong></li>
+</ul>
+<hr>
+<ul>
+<li>In <strong>header.php</strong> in VSCode TYPE <code>html:5</code> and press TAB to auto generate HTML5 scaffolding</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"IE=edge"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+</div></code></pre>
+<ul>
+<li>
+<p>Closing body and html tags in <strong>footer.php</strong></p>
+</li>
+<li>
+<p>Front page will be blank, but can test by seeing if the full html tag contents are in &quot;view source&quot; in code inspector</p>
+</li>
+</ul>
+<hr>
+<ul>
+<li>Let's enqueue our stylesheet</li>
+</ul>
+<p>wp_head() and wp_footer() are similar to hooks that inject styles into header and footer</p>
+<p><strong>header.php</strong></p>
+<pre class="hljs"><code><div>&lt;!DOCTYPE html&gt;
+&lt;html lang=<span class="hljs-string">"en"</span>&gt;
+&lt;head&gt;
+  &lt;meta charset=<span class="hljs-string">"UTF-8"</span>&gt;
+  &lt;meta http-equiv=<span class="hljs-string">"X-UA-Compatible"</span> content=<span class="hljs-string">"IE=edge"</span>&gt;
+  &lt;meta name=<span class="hljs-string">"viewport"</span> content=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;
+  &lt;title&gt;Document&lt;/title&gt;
+
+  <span class="hljs-meta">&lt;?php</span> wp_head(); <span class="hljs-meta">?&gt;</span>
+
+&lt;/head&gt;
+&lt;body&gt;
+</div></code></pre>
+<p><strong>footer.php</strong></p>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span> wp_footer(); <span class="hljs-meta">?&gt;</span>
+
+&lt;/body&gt;
+&lt;/html&gt;
+</div></code></pre>
+<ul>
+<li>If you refresh your page the wordpress <strong>admin bar</strong> should now be showing</li>
+</ul>
+<hr>
+<ul>
+<li>
+<p>Enqueue stylesheets in <strong>functions.php</strong></p>
+</li>
+<li>
+<p>We are going to be installing <strong>Bootstrap</strong></p>
+</li>
+<li>
+<p>Download compiled css and js from <a href="getbootstrap.com">getbootstrap.com</a></p>
+</li>
+<li>
+<p>Unzip and drag <strong>css/</strong> and <strong>js/</strong> folders into your theme root</p>
+</li>
+<li>
+<p>Create an <strong>images/</strong> folder in theme root also</p>
+</li>
+</ul>
+<p>@@ 9:19</p>
+<h4 id="enqueue-styles-in-functionsphp">Enqueue Styles in functions.php:</h4>
+<ul>
+<li>
+<p>Add <strong>load_css()</strong> function to functions.php</p>
+</li>
+<li>
+<p>Register bootstrap stylesheet</p>
+<ul>
+<li>Give it a handle first -- could be &quot;clownshoes&quot;, but &quot;bootstrap&quot; makes more sense</li>
+<li>Use the .min version of bootstrap.css because it saves loading time <strong>#performance</strong></li>
+<li>Then tell wordpress where to find the bootstrap css file with <strong>get_template_directory_uri()</strong></li>
+<li>The third argument is a list of dependencies (other stylesheets this one may depend on). If not, just type <code>array(),</code></li>
+<li>Fourth arg is version -- can put <code>false</code></li>
+<li>Fifth arg is media, as in for responsive media queries. Just type 'all' unless you have reason not to</li>
+</ul>
+</li>
+<li>
+<p>Immediately after creating function, call it with <code>wp_enqueue_style('bootstrap')</code></p>
+</li>
+</ul>
+<h6 id="def-gettemplatedirectoryuri-tells-wp-the-root-of-the-stylesheet-directory">DEF: <strong>get_template_directory_uri():</strong> tells WP the root of the stylesheet directory</h6>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">load_css</span><span class="hljs-params">()</span> </span>{
+
+  wp_register_style(
+    <span class="hljs-string">'bootstrap'</span>, get_template_directory_uri() . <span class="hljs-string">'/css/bootstrap.min.css'</span>,
+    <span class="hljs-keyword">array</span>(), <span class="hljs-keyword">false</span>, <span class="hljs-string">'all'</span>);
+  wp_enqueue_style(<span class="hljs-string">'bootstrap'</span>);
+
+}
+
+</div></code></pre>
+<ul>
+<li>Add the style to the WP boot sequence with <strong>add_action()</strong>:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">load_css</span><span class="hljs-params">()</span> </span>{
+
+  wp_register_style(
+    <span class="hljs-string">'bootstrap'</span>, get_template_directory_uri() . <span class="hljs-string">'/css/bootstrap.min.css'</span>,
+    <span class="hljs-keyword">array</span>(), <span class="hljs-keyword">false</span>, <span class="hljs-string">'all'</span>);
+  wp_enqueue_style(<span class="hljs-string">'bootstrap'</span>);
+
+}
+add_action(<span class="hljs-string">'wp_enqueue_scripts'</span>, <span class="hljs-string">'load_css'</span>);
+</div></code></pre>
+<ul>
+<li>
+<p>Now, if we go to the homepage and refresh, it will still be blank, but if you view the source code (<strong>CTRL-U</strong>) you should see <code>/css/bootstrap.min.css</code> in a <code>link rel</code> tag.</p>
+</li>
+<li>
+<p>Next, we will load JavaScripts for Bootstrap</p>
+</li>
+<li>
+<p><strong>#GOTCHA:</strong> Bootstrap does have jQuery as a dependency, so ...</p>
+</li>
+<li>
+<p>WordPress automatically ships with jQuery</p>
+</li>
+<li>
+<p><strong>jQuery Migrate:</strong> a patch provided by WordPress which helps you use jQuery plugins that require a newer version jQuery; for backward compatibility</p>
+</li>
+<li>
+<p>Version: false</p>
+</li>
+<li>
+<p>last parameter = &quot;in footer&quot;: true</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">load_js</span><span class="hljs-params">()</span> </span>{
+
+  wp_register_script(<span class="hljs-string">'bootstrap-scripts'</span>, get_template_directory_uri() . <span class="hljs-string">'/js/bootstrap.min.js'</span>,
+  <span class="hljs-string">'jquery'</span>, <span class="hljs-keyword">false</span>, <span class="hljs-keyword">true</span>);
+  wp_enqueue_script(<span class="hljs-string">'bootstrap-scripts'</span>);
+
+}
+add_action(<span class="hljs-string">'wp_enqueue_scripts'</span>, <span class="hljs-string">'load_js'</span>);
+</div></code></pre>
+<ul>
+<li>
+<p>Now, as long as you have registered an enqueued the script and done add action, you should see <code>/js/bootstrap.min.js</code> show up in a <code>script</code> tag before the closing body tag in the page source.</p>
+</li>
+<li>
+<p><strong>#GOTCHA:</strong> If we search for jQuery in the page source, although WordPress automatically includes it in the core, it is not included on the page. To include in your custom theme we need to enqueue it as a script. Enqueue jQuery before the register_script() statements in <strong>load_js()</strong>:</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">load_js</span><span class="hljs-params">()</span> </span>{
+
+  wp_enqueue_script(<span class="hljs-string">'jquery'</span>);
+  wp_register_script(<span class="hljs-string">'bootstrap-scripts'</span>, ...
+</div></code></pre>
+<ul>
+<li>Now, if we refresh the page source, jQuery will be in our header.</li>
+</ul>
+<h3 id="vid-04---template-parts--page-templates">VID: 04 - Template Parts &amp; Page Templates</h3>
+<ul>
+<li><strong>#GOTCHA:</strong> Discrepancy - Offscreen after the last vid (03) he added the <code>div class='container'</code> section with the title to <strong>front-page.php</strong> like this:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span> get_header();  <span class="hljs-meta">?&gt;</span>
+
+  &lt;div <span class="hljs-class"><span class="hljs-keyword">class</span>="<span class="hljs-title">container</span>"&gt;
+    
+    &lt;<span class="hljs-title">h1</span>&gt;&lt;?<span class="hljs-title">php</span> <span class="hljs-title">the_title</span>(); ?&gt;&lt;/<span class="hljs-title">h1</span>&gt;
+
+  &lt;/<span class="hljs-title">div</span>&gt;
+
+
+&lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_footer</span>();  ?&gt;
+</span></div></code></pre>
+<ul>
+<li>ADD some text to the content area on <strong>home</strong> page.</li>
+<li>I added lorem ipsum from https://trumpipsum.net/</li>
+</ul>
+<blockquote>
+<p>You know, it really doesn’t matter what you write as long as you’ve got a young, and beautiful, piece of text. You have so many different things placeholder text has to be able to do, and I don't believe Lorem Ipsum has the stamina. Look at that text! Would anyone use that? Can you imagine that, the text of your next webpage?! I write the best placeholder text, and I'm the biggest developer on the web by far... While that's mock-ups and this is politics, are they really so different? Despite the constant negative ipsum covfefe.</p>
+<p>You're telling the enemy exactly what you're going to do. No wonder you've been fighting Lorem Ipsum your entire adult life. An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud.</p>
+<p>An 'extremely credible source' has called my office and told me that Lorem Ipsum's birth certificate is a fraud. I think my strongest asset maybe by far is my temperament. I have a placeholding temperament.</p>
+<p>An ‘extremely credible source’ has called my office and told me that Barack Obama’s placeholder text is a fraud. Lorem Ipsum is unattractive, both inside and out. I fully understand why it’s former users left it for something else. They made a good decision. An 'extremely credible source' has called my office and told me that Lorem Ipsum's birth certificate is a fraud.</p>
+</blockquote>
+<ul>
+<li>We'll create some template parts on</li>
+</ul>
+<h6 id="def-template-part---sections-to-help-organize-wordpress-web-page-parts">DEF: template part - sections to help organize WordPress web page parts</h6>
+<ul>
+<li>Create new folder <strong>includes/</strong></li>
+<li>Create new file in includes/ <strong>section-content.php</strong></li>
+<li>Call section-content.php as template part in <strong>front-page.php</strong> with <strong>get_template_part()</strong> function:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span> get_template_part(<span class="hljs-string">'includes/section'</span>, <span class="hljs-string">'content'</span>); <span class="hljs-meta">?&gt;</span>
+</div></code></pre>
+<ul>
+<li>
+<p><strong>get_template_part()</strong>:</p>
+<ul>
+<li>1st arg: relative path with the first part of the name before the hyphen</li>
+<li>2nd arg: second part of the file name</li>
+</ul>
+</li>
+<li>
+<p>For testing, type &quot;THIS IS THE CONTENT SECTION&quot; in <strong>section-content.php</strong></p>
+</li>
+</ul>
+<p>@@ 2:50</p>
+<h4 id="pulling-content-from-database">Pulling Content from Database</h4>
+<ul>
+<li>Now we are going to start pulling content from the database</li>
+<li>The following basically means <strong>if we have some posts, loop through them and instantiate each one until done</strong></li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span>( have_posts() ): <span class="hljs-keyword">while</span>( have_posts() ): the_post(); <span class="hljs-meta">?&gt;</span>
+
+  <span class="hljs-comment">// DO STUFF</span>
+
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">endwhile</span>; <span class="hljs-keyword">else</span>: <span class="hljs-keyword">endif</span>; <span class="hljs-meta">?&gt;</span>
+</div></code></pre>
+<ul>
+<li>Now, show the content by replacing &quot;// DO STUFF&quot; with a call to <strong>the_content()</strong> like this:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">if</span>( have_posts() ): <span class="hljs-keyword">while</span>( have_posts() ): the_post(); <span class="hljs-meta">?&gt;</span>
+
+  <span class="hljs-meta">&lt;?php</span> the_content(); <span class="hljs-meta">?&gt;</span>
+
+<span class="hljs-meta">&lt;?php</span> <span class="hljs-keyword">endwhile</span>; <span class="hljs-keyword">else</span>: <span class="hljs-keyword">endif</span>; <span class="hljs-meta">?&gt;</span>
+</div></code></pre>
+<style>
+h4[id*="@@"] {
+  background: bisque;
+  padding: 1rem;
+}
+</style>
+<h4 id="458---page-templates">@@ 4:58 - Page Templates</h4>
+<h2 id="bookmark">BOOKMARK</h2>
+<hr>
+
+</body>
+</html>
