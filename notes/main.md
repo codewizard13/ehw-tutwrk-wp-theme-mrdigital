@@ -22,7 +22,7 @@ h3 {
 
 # TUTORIAL NOTES
 
-
+<a class="bookmark-link" href="#bookmark">JUMP TO BOOKMARK</a>
 
 
 ### VID: 01-02
@@ -159,6 +159,6 @@ wp_head() and wp_footer() are similar to hooks that inject styles into header an
 
 ```
 
-<a class="bookmark-link" href="#bookmark">BOOKMARK</a>
+## BOOKMARK
 
 ---
