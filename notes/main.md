@@ -267,6 +267,42 @@ function load_js() {
 
 #### @@ 4:58 - Page Templates
 
+- Create page **About Us** and type some text in content editor
+- **#GOTCHA:** About Us page is blank because the front-page.php only works for the homepage, but every other page uses the **page.php** template
+- In **page.php** add "This is a page template" as the content
+- Now when you refresh the about-us page it should show that text
+
+- Next, create a **Contact Us** page, but leave the content blank. When you view it, it will automatically display the dummy text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## BOOKMARK
 
