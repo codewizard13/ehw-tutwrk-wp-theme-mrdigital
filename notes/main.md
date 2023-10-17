@@ -387,10 +387,15 @@ Template Name: Contact Us
 
 - You could do the same thing for the footer by creating **footer-whatever.php**
 
+### VID: 05 - Navigation Menus
+
+#### @@ 00:30 - How to Enqueue our own custom stylesheet
+
+- Create new file **main.css** in css/ folder
 
 
-
-
+#### #GOTCHA: Something 
+- Copy-paste
 
 
 

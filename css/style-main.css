@@ -31,6 +31,23 @@ h6 {
   background: #ffffe3;
 }
 
+
+/* H4 will be for messages, tips, warnings, timestamps, etc.
+   This is the base message format.
+*/
+h4 {
+  padding: 1rem;
+  border: solid 2px gray;
+  border-radius: 1rem;
+}
+
+/* H4 gotchas */
+h4[id^="gotcha"] {
+  background: mistyrose;
+  color: brown;
+  border-color: brown;
+}
+
 /* H4 video time stamps */
 h4[id*="---"] {
   background: bisque;
