@@ -276,10 +276,26 @@ function load_js() {
 
 - Copy-paste from **front-page.php** into into **page.php**
 
+#### How to give each page its own template
 
+#### @@ 7:00 - Contact Us Template
 
+- Create new template for contact us page in theme root called **template-contactus.php**
 
+- First tell wordpress this is a template with:
 
+```php
+<?php
+/*
+Template Name: Contact Us
+*/
+?>
+
+This is the CONTACT PAGE template
+```
+
+- Now, in the Contact Us page editor, refresh the page and you should see a "Template" dropdown option in the right sidebar.
+- If we choose "Contact Us" in the "Template" dropdown list and update, we will be using the "Contact Us" template
 
 
 
