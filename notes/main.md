@@ -454,7 +454,20 @@ header {
 
 STOPPED @ 4:21
 
+---
 
+- **NEXT WE ARE CREATING THE NAV MENU**
+
+#### #GOTCHA: We have to tell WordPress to enable menu functionality -- it is not enabled by default.
+
+- In **funtions.php** create a "Theme Options" section and enable menus with the **add_theme_support()** function:
+
+```php
+// Theme Options
+add_theme_support('menus');
+```
+
+- Add "Load Stylesheets" and "Load JavaScripts" comments to appropriate sections in functions.php.
 
 
 

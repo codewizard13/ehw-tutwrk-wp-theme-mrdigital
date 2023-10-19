@@ -1,6 +1,6 @@
 <?php
 
-
+// Load Stylesheets
 function load_css() {
 
   wp_register_style(
@@ -18,6 +18,7 @@ function load_css() {
 }
 add_action('wp_enqueue_scripts', 'load_css');
 
+// Load JavaScript
 function load_js() {
 
   wp_enqueue_script('jquery');
@@ -30,3 +31,5 @@ function load_js() {
 add_action('wp_enqueue_scripts', 'load_js');
 
 
+// Theme Options
+add_theme_support('menus');
