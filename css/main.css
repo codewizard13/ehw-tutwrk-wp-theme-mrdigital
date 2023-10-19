@@ -15,6 +15,13 @@ header .top-bar {
   display: flex; /* make menu horizontal */
 }
 
+header .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 header .top-bar li a {
   padding: .25rem 1rem;
   color: #fff;

@@ -590,7 +590,18 @@ header .top-bar li a {
 }
 ```
 
+#### #GOTCHA: The .container div needs to be 100% height or the menu won't center vertically.
 
+- Center menu in header with flexbox:
+
+```css
+header .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+```
 
 
 
