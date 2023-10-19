@@ -14,3 +14,7 @@ header .top-bar {
   padding: 0;
   display: flex; /* make menu horizontal */
 }
+
+header .top-bar li a {
+  padding: .25rem 1rem;
+}
