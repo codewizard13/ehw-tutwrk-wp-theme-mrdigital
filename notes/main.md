@@ -603,7 +603,22 @@ header .container {
 }
 ```
 
+#### #GOTCHA: In his WordPress version, menus appear to have no underline except on hover by default. To match his configuration, we need to set text-decoration: none but add it on hover.
 
+- Make these changes to **main.css**:
+
+```css
+header .top-bar li a {
+  padding: .25rem 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+header .top-bar li a:hover {
+  text-decoration: underline;
+}
+```
+
+@@ Stopped at 16:08
 
 
 

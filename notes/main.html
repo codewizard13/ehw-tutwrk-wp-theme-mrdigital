@@ -877,6 +877,159 @@ Template Name: Contact Us
 &lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_footer</span>();  ?&gt;
 </span></div></code></pre>
 <p>STOPPED @ 4:21</p>
+<hr>
+<ul>
+<li><strong>NEXT WE ARE CREATING THE NAV MENU</strong></li>
+</ul>
+<h4 id="gotcha-we-have-to-tell-wordpress-to-enable-menu-functionality----it-is-not-enabled-by-default">#GOTCHA: We have to tell WordPress to enable menu functionality -- it is not enabled by default.</h4>
+<ul>
+<li>In <strong>funtions.php</strong> create a &quot;Theme Options&quot; section and enable menus with the <strong>add_theme_support()</strong> function:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-comment">// Theme Options</span>
+add_theme_support(<span class="hljs-string">'menus'</span>);
+</div></code></pre>
+<ul>
+<li>
+<p>Add &quot;Load Stylesheets&quot; and &quot;Load JavaScripts&quot; comments to appropriate sections in functions.php.</p>
+</li>
+<li>
+<p>Now, menus are enabled</p>
+</li>
+</ul>
+<h4 id="550---creating-our-first-menu">@@ 5:50 - Creating our first menu</h4>
+<ul>
+<li>Appearance &gt; Menus &gt; create menu &quot;Top Bar&quot;</li>
+<li>Add all 3 pages (Home, About Us, Contact Us) to Top Bar</li>
+</ul>
+<h4 id="tip-create-%22menu-locations%22-to-hook-into-with-registernavmenus-in-functionsphp">#TIP: Create &quot;menu locations&quot; to hook into with register_nav_menus() in functions.php.</h4>
+<pre class="hljs"><code><div><span class="hljs-comment">// Menus</span>
+register_nav_menus(
+
+  <span class="hljs-keyword">array</span>(
+    <span class="hljs-string">'top-menu'</span> =&gt; <span class="hljs-string">'Top Menu Location'</span>,
+    <span class="hljs-string">'mobile-menu'</span> =&gt; <span class="hljs-string">'Mobile Menu Location'</span>,
+  )
+
+);
+</div></code></pre>
+<ul>
+<li>In the arguments array the stub / handle is on the left and the display name on the right</li>
+<li>Now, you should see the display names listed on the <strong>Appearance &gt; Menus page under &quot;Display Location&quot;</strong></li>
+<li>Add Top Menu to header using the <strong>wp_nav_menu()</strong> hook in functions.php:</li>
+</ul>
+<pre class="hljs"><code><div>&lt;header&gt;
+
+  <span class="hljs-meta">&lt;?php</span>
+  wp_nav_menu(
+    <span class="hljs-keyword">array</span>(
+      <span class="hljs-string">'theme_location'</span> =&gt; <span class="hljs-string">'top-menu'</span>,
+    )
+  );
+  <span class="hljs-meta">?&gt;</span>
+
+&lt;/header&gt;
+</div></code></pre>
+<ul>
+<li>Now, you the menu should display in the black header that we created.</li>
+</ul>
+<h4 id="gotcha-the-header-top-nav-menu-is-currently-unstyled-so-it-shows-as-an-unordered-list-on-the-top-left-we-will-need-to-style-it-next">#GOTCHA:  The header top nav menu is currently unstyled, so it shows as an unordered list on the top left. We will need to style it next.</h4>
+<ul>
+<li>In <strong>header.php</strong> wrap the wp_nav_menu() function in a <code>div.container</code> bootstrap class in order to center the div on the page. Note, the menu will still be aligned left.</li>
+<li></li>
+</ul>
+<hr>
+<h3 id="some-options-for-the-wpnavmenu-args-array">Some options for the wp_nav_menu() args array:</h3>
+<ul>
+<li><strong>menu</strong>: hard-codes whatever menu, in this case the menu titled &quot;Top Bar&quot;</li>
+</ul>
+<pre class="hljs"><code><div>    wp_nav_menu(
+      <span class="hljs-keyword">array</span>(
+        <span class="hljs-string">'menu'</span> =&gt; <span class="hljs-string">'Top Bar'</span>,
+      )
+    );
+</div></code></pre>
+<ul>
+<li><strong>menu_class</strong>: adds a class to the generated wp_nav_menu(). Add a class called 'top-bar' like this:</li>
+</ul>
+<pre class="hljs"><code><div>wp_nav_menu(
+  <span class="hljs-keyword">array</span>(
+    <span class="hljs-string">'theme_location'</span> =&gt; <span class="hljs-string">'top-menu'</span>,
+    <span class="hljs-string">'menu_class'</span> =&gt; <span class="hljs-string">'top-bar'</span>,
+  )
+);
+
+</div></code></pre>
+<ul>
+<li>
+<p>Verify by inspected the source code and look for <code>class=&quot;top-bar&quot;</code></p>
+</li>
+<li>
+<p>Top begin styling, just create a <code>header .top-bar</code> class in main.css like this:</p>
+</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.top-bar</span> {
+  <span class="hljs-attribute">list-style-type</span>: none;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>: <span class="hljs-number">0</span>;
+  <span class="hljs-attribute">display</span>: flex; <span class="hljs-comment">/* make menu horizontal */</span>
+}
+</div></code></pre>
+<h4 id="1300---now-you-should-have-a-horizontal-menu-with-no-whitespace">@@ 13:00 - Now you should have a <strong>horizontal menu</strong> with no whitespace</h4>
+<ul>
+<li>We are going to work in <strong>main.css</strong> now</li>
+<li>Add spacing to all menu item links:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.top-bar</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">padding</span>: .<span class="hljs-number">25rem</span> <span class="hljs-number">1rem</span>;
+}
+</div></code></pre>
+<ul>
+<li>Remove left padding from first item:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.top-bar</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:first-child</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">padding-left</span>: <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<ul>
+<li>Remove right padding from last item:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.top-bar</span> <span class="hljs-selector-tag">li</span><span class="hljs-selector-pseudo">:last-child</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">padding-right</span>: <span class="hljs-number">0</span>;
+}
+</div></code></pre>
+<ul>
+<li>Change menu link color:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.top-bar</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">padding</span>: .<span class="hljs-number">25rem</span> <span class="hljs-number">1rem</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+}
+</div></code></pre>
+<h4 id="gotcha-the-container-div-needs-to-be-100-height-or-the-menu-wont-center-vertically">#GOTCHA: The .container div needs to be 100% height or the menu won't center vertically.</h4>
+<ul>
+<li>Center menu in header with flexbox:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.container</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">justify-content</span>: center;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+}
+</div></code></pre>
+<h4 id="gotcha-in-his-wordpress-version-menus-appear-to-have-no-underline-except-on-hover-by-default-to-match-his-configuration-we-need-to-set-text-decoration-none-but-add-it-on-hover">#GOTCHA: In his WordPress version, menus appear to have no underline except on hover by default. To match his configuration, we need to set text-decoration: none but add it on hover.</h4>
+<ul>
+<li>Make these changes to <strong>main.css</strong>:</li>
+</ul>
+<pre class="hljs"><code><div><span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.top-bar</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span> {
+  <span class="hljs-attribute">padding</span>: .<span class="hljs-number">25rem</span> <span class="hljs-number">1rem</span>;
+  <span class="hljs-attribute">color</span>: <span class="hljs-number">#fff</span>;
+  <span class="hljs-attribute">text-decoration</span>: none;
+}
+<span class="hljs-selector-tag">header</span> <span class="hljs-selector-class">.top-bar</span> <span class="hljs-selector-tag">li</span> <span class="hljs-selector-tag">a</span><span class="hljs-selector-pseudo">:hover</span> {
+  <span class="hljs-attribute">text-decoration</span>: underline;
+}
+</div></code></pre>
+<p>@@ Stopped at 16:08</p>
 <h2 id="bookmark">BOOKMARK</h2>
 <hr>
 
