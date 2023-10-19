@@ -7,3 +7,10 @@ header {
 .page-wrap {
   padding: 2rem 0; /* add padding between header and content */
 }
+
+header .top-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* make menu horizontal */
+}

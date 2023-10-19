@@ -517,7 +517,8 @@ register_nav_menus(
 
 ---
 
-- Some options for the wp_nav_menu() args array:
+### Some options for the wp_nav_menu() args array:
+
 - **menu**: hard-codes whatever menu, in this case the menu titled "Top Bar"
 
 ```php
@@ -528,11 +529,32 @@ register_nav_menus(
     );
 ```
 
+- **menu_class**: adds a class to the generated wp_nav_menu(). Add a class called 'top-bar' like this:
 
+```php
+wp_nav_menu(
+  array(
+    'theme_location' => 'top-menu',
+    'menu_class' => 'top-bar',
+  )
+);
 
+```
 
+- Verify by inspected the source code and look for `class="top-bar"`
 
+- Top begin styling, just create a `header .top-bar` class in main.css like this:
 
+```css
+header .top-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* make menu horizontal */
+}
+```
+
+#### @@ 13:00 - Now you should have a **horizontal menu** with no whitespace
 
 
 
