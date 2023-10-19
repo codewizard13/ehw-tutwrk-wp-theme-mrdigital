@@ -43,9 +43,16 @@ h4 {
 
 /* H4 gotchas */
 h4[id^="gotcha"] {
-  background: mistyrose;
+  background: mistyrose !important;
   color: brown;
   border-color: brown;
+}
+
+/* H4 tips */
+h4[id^="tip"] {
+  background: #eafbea !important;
+  /* color: brown;
+  border-color: brown; */
 }
 
 /* H4 video time stamps */
