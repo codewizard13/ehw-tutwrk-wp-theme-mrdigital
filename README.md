@@ -40,3 +40,6 @@ Learn how to create custom WordPress theme hand-coding from scratch by following
 
 Notes are located in [./notes/main.md](./notes/main.md)
 
+## RESOURCES & REFERENCE
+
+- Good **Color Names** and Shades website: https://www.html-color-names.com/lightgreen.php

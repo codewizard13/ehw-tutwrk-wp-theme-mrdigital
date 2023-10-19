@@ -469,10 +469,48 @@ add_theme_support('menus');
 
 - Add "Load Stylesheets" and "Load JavaScripts" comments to appropriate sections in functions.php.
 
+- Now, menus are enabled
 
+#### @@ 5:50 - Creating our first menu
 
+- Appearance > Menus > create menu "Top Bar"
+- Add all 3 pages (Home, About Us, Contact Us) to Top Bar
 
+#### #TIP: Create "menu locations" to hook into with register_nav_menus() in functions.php.
 
+```php
+// Menus
+register_nav_menus(
+
+  array(
+    'top-menu' => 'Top Menu Location',
+    'mobile-menu' => 'Mobile Menu Location',
+  )
+
+);
+```
+
+- In the arguments array the stub / handle is on the left and the display name on the right
+- Now, you should see the display names listed on the **Appearance > Menus page under "Display Location"**
+- Add Top Menu to header using the **wp_nav_menu()** hook in functions.php:
+
+```php
+<header>
+
+  <?php
+  wp_nav_menu(
+    array(
+      'theme_location' => 'top-menu',
+    )
+  );
+  ?>
+
+</header>
+```
+
+- Now, you the menu should display in the black header that we created. 
+  
+#### #GOTCHA:  The header top nav menu is currently unstyled, so it shows as an unordered list on the top left. We will need to style it next.
 
 
 
