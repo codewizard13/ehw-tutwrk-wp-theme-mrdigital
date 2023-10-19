@@ -13,12 +13,14 @@
   
 <header>
 
-  <?php
-  wp_nav_menu(
-    array(
-      'theme_location' => 'top-menu',
-    )
-  );
-  ?>
+  <div class="container">
+    <?php
+    wp_nav_menu(
+      array(
+        'theme_location' => 'top-menu',
+      )
+    );
+    ?>
+  </div>
 
 </header>

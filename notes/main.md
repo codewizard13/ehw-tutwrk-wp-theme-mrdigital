@@ -512,8 +512,21 @@ register_nav_menus(
   
 #### #GOTCHA:  The header top nav menu is currently unstyled, so it shows as an unordered list on the top left. We will need to style it next.
 
+- In **header.php** wrap the wp_nav_menu() function in a `div.container` bootstrap class in order to center the div on the page. Note, the menu will still be aligned left.
+- 
 
+---
 
+- Some options for the wp_nav_menu() args array:
+- **menu**: hard-codes whatever menu, in this case the menu titled "Top Bar"
+
+```php
+    wp_nav_menu(
+      array(
+        'menu' => 'Top Bar',
+      )
+    );
+```
 
 
 
