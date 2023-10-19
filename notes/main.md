@@ -556,6 +556,76 @@ header .top-bar {
 
 #### @@ 13:00 - Now you should have a **horizontal menu** with no whitespace
 
+- We are going to work in **main.css** now
+- Add spacing to all menu item links:
+
+```css
+header .top-bar li a {
+  padding: .25rem 1rem;
+}
+```
+
+- Remove left padding from first item:
+
+```css
+header .top-bar li:first-child a {
+  padding-left: 0;
+}
+```
+
+- Remove right padding from last item:
+
+```css
+header .top-bar li:last-child a {
+  padding-right: 0;
+}
+```
+
+- Change menu link color:
+
+```css
+header .top-bar li a {
+  padding: .25rem 1rem;
+  color: #fff;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
