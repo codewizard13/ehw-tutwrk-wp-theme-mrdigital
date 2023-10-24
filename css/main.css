@@ -74,3 +74,44 @@ header .top-bar li .sub-menu a:hover {
 header .top-bar .menu-item-has-children:hover .sub-menu {
   display: block;
 }
+
+/* 2nd level submenu */
+header .top-bar .sub-menu li .sub-menu {
+  left: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

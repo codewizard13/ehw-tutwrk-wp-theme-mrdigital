@@ -756,10 +756,44 @@ header .top-bar li .sub-menu {
 }
 ```
 
-- Add 3 more dummy submenu items by just adding anything (pages) to see what multiple items will look like.
+- Add 4 more dummy submenu items by just adding anything (pages) to see what multiple items will look like.
 
+#### #GOTCHA: The website content overlaps the dropdown submenu. You can see this effect on the contact page. Solve by adding a z-index value of 999 to the submenu.
 
+- Make the top menu structure look like this:
 
+```bash
+.
+├── Home
+├── About Us/
+│   ├── Our Team
+│   ├── Our Team
+│   ├── Contact Us
+│   └── About Us/
+│       ├── Our Team
+│       ├── Our Team
+│       ├── Contact Us
+│       └── About Us
+├── Home
+└── Home
+```
+
+#### #GOTCHA: Nested 2nd level submenu displays in same column as 1st level, but should be offset.
+
+- Target 2nd submenu and offset with `left: 100%`:
+
+```css
+...
+
+header .top-bar .menu-item-has-children:hover .sub-menu {
+  display: block;
+}
+
+/* 2nd level submenu */
+header .top-bar .sub-menu li .sub-menu {
+  left: 100%;
+}
+```
 
 
 
