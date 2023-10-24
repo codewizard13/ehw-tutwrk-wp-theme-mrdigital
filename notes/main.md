@@ -808,6 +808,16 @@ header .top-bar > .menu-item-has-children:hover > .sub-menu {
 }
 ```
 
+#### #GOTCHA: This nested submenu targeting can get tricky. You may want to start with the following code that works, and play around changing things to see what effects it will have.
+
+- Add this under the 1st level submenu hover rule:
+
+```css
+header .top-bar .menu-item-has-children .sub-menu > .menu-item-has-children:hover .sub-menu {
+  display: block;
+}
+```
+
 
 
 
