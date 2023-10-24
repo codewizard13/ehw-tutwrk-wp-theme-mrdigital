@@ -653,6 +653,40 @@ header .top-bar li .sub-menu {
 }
 ```
 
+#### #TIP: If a menu has a submenu, WordPress injects a class called "menu-item-has-children".
+
+- To show on hover add `display:block` like this:
+
+```css
+header .top-bar .menu-item-has-children:hover .sub-menu {
+  display: block;
+}
+```
+
+- Then add these styles:
+
+```css
+header .top-bar li .sub-menu {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+}
+```
+
+#### #GOTCHA: When you hover on the menu, the submenu will now appear in on the far top left. We need to add styles to tell it to pop up RELATIVE TO the "About Us" menu item location. It is also showing a weird sun icon instead of letters.
+
+- Target the list item itself by adding this code right after the `header .container` rule:
+
+```css
+header .top-bar li {
+  position: relative;
+}
+```
+
+#### #GOTCHA: Now the submenu comes up right on top of the parent menu item.
 
 
 
