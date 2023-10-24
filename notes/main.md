@@ -722,6 +722,30 @@ header .top-bar li .sub-menu a {
 ```
 
 - We are getting closer. Now we have the submenu popping up in the right place and the submenu item text is displaying. Just a little more styling needed to make it look good.
+- Let's center the text and give it some padding. The submenu link should now look like:
+
+```css
+header .top-bar li .sub-menu a {
+  color: red;
+  padding: .25rem;
+  text-align: center;
+}
+```
+
+#### #GOTCHA: There is no change - Why? Because the link is displaying as inline. We need to change display to block.
+
+- Now, remove the link underline and make it so link text turns black on hover:
+
+```css
+...
+  text-decoration: none;
+}
+
+header .top-bar li .sub-menu a:hover {
+  color: black;
+}
+```
+
 
 
 

@@ -59,7 +59,16 @@ header .top-bar li .sub-menu {
 
 header .top-bar li .sub-menu a {
   color: red;
+  padding: .25rem;
+  text-align: center;
+  display: block;
+  text-decoration: none;
 }
+
+header .top-bar li .sub-menu a:hover {
+  color: black;
+}
+
 
 header .top-bar .menu-item-has-children:hover .sub-menu {
   display: block;
