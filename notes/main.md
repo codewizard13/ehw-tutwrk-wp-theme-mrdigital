@@ -618,7 +618,19 @@ header .top-bar li a:hover {
 }
 ```
 
-@@ Stopped at 16:08
+#### @@ 16:08 - Now we should have a working top menu with "Home", "About Us", and "Contact Us"
+
+- Next, add the `section.page-wrap` to page.php and template-contactus.php. So, for page.php:
+
+```php
+<?php get_header();  ?>
+
+<section class="page-wrap">
+<div class="container">
+...
+```
+
+
 
 
 
