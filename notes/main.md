@@ -698,8 +698,30 @@ header .top-bar li .sub-menu {
   ...
 ```
 
+- Turns out that 'sun' thing was a disc style list bullet. Remove bullets by adding this code to bottom of the .sub-menu rule:
 
+```css
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+```
 
+- Then give it a width of 300px and lets target the link itself for the color change:
+
+```css
+...
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  width: 300px;
+}
+
+header .top-bar li .sub-menu a {
+  color: red;
+}
+```
+
+- We are getting closer. Now we have the submenu popping up in the right place and the submenu item text is displaying. Just a little more styling needed to make it look good.
 
 
 
