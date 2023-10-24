@@ -630,10 +630,28 @@ header .top-bar li a:hover {
 ...
 ```
 
+#### @@ 16:30 - Sub Menus
 
+- Create and publish a page called **Our Team**
+- Add as a submenu item (nested) of "About Us" in Appearance > Menus
 
+#### #GOTCHA: When we refresh and view the header menu, "Our Team" is there but not styled. It should pop out on hover and be invisible otherwise, but it is visible and taking up space in the menu.
 
+- Inspecting the code we can see that WordPress gives the nested a menu item a class of **sub-menu** like this:
 
+```html
+<ul class="sub-menu">
+	<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="http://hkkbsnap01.local/our-team/">Our Team</a></li>
+</ul>
+```
+
+- So, first we hide the submenu item:
+
+```css
+header .top-bar li .sub-menu {
+  display: none;
+}
+```
 
 
 
