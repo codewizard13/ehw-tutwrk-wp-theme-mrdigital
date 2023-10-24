@@ -688,7 +688,15 @@ header .top-bar li {
 
 #### #GOTCHA: Now the submenu comes up right on top of the parent menu item.
 
+- Changing top from zero to **100%** will fix this issue:
 
+```css
+header .top-bar li .sub-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  ...
+```
 
 
 
