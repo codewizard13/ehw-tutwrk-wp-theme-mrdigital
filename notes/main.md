@@ -746,7 +746,17 @@ header .top-bar li .sub-menu a:hover {
 }
 ```
 
+- Reduce submenu width to 200px and add rounded corners:
 
+```css
+header .top-bar li .sub-menu {
+...
+  width: 200px;
+  border-radius: .5rem;
+}
+```
+
+- Add 3 more dummy submenu items by just adding anything (pages) to see what multiple items will look like.
 
 
 
