@@ -795,7 +795,18 @@ header .top-bar .sub-menu li .sub-menu {
 }
 ```
 
+- Change where the 2nd level submenu starts with `top: 0`.
 
+
+#### #GOTCHA: We should only target submenu we want to show when we highlight a link
+
+- Make so the display block of submenu only shows when hovering the first level by adding direct child selector greater than sign arrows:
+
+```css
+header .top-bar > .menu-item-has-children:hover > .sub-menu {
+  display: block;
+}
+```
 
 
 
