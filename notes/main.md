@@ -818,7 +818,91 @@ header .top-bar .menu-item-has-children .sub-menu > .menu-item-has-children:hove
 }
 ```
 
+#### @@ 30:02 - How to create multiple theme locations
 
+- Copy the `header` tag from header.php and paste in footer.php above current code
+- In **footer.php** change the header tag to a footer tag
+- Set them_location to footer-menu and menu_class to footer-bar like this: 
+
+```php
+wp_nav_menu(
+  array(
+    'theme_location' => 'footer-menu',
+    'menu_class' => 'footer-bar',
+  )
+);
+```
+
+- In **functions.php** register a new location for footer menu:
+
+```php
+register_nav_menus(
+
+  array(
+    'top-menu' => 'Top Menu Location',
+    'mobile-menu' => 'Mobile Menu Location',
+    'footer-menu' => 'Footer Menu Location',
+  )
+
+);
+```
+
+- Go to Appearance > Menus and refresh and now we should see "Footer Menu Location" listed.
+- Enable the "Footer Menu Location" checkbox
+
+#### #TIP: He doesn't cover this in detail, but here's how we make and style the footer menu:
+
+- Add another menu in Appearance > Menus called "Footer Menu" and assign it to the footer menu location
+
+- All all current pages (Home, About Us, Contact Us, Our Team) to the menu and save
+
+- Copy a good chunk of the header menu styles and replace "header" with "footer" and "top-bar" with "footer-bar". The footer styling should look like this:
+
+```css
+footer {
+background: #111;
+width: 100%;
+height: 100px;
+}
+footer .footer-bar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* make menu horizontal */
+  background: black;
+  width: 100%;
+}
+
+footer .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+footer .footer-bar li {
+  position: relative;
+}
+
+footer .footer-bar li a {
+  padding: .25rem 1rem;
+  color: #fff;
+  text-decoration: none;
+}
+footer .footer-bar li a:hover {
+  text-decoration: underline;
+}
+
+footer .footer-bar li:first-child a {
+  padding-left: 0;
+}
+
+footer .footer-bar li:last-child a {
+  padding-right: 0;
+}
+```
+
+- Now the footer styling matches the header styling on everthing except hover for nested submenus. This is enough to get the point across
 
 
 
