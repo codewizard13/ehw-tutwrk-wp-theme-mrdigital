@@ -904,7 +904,8 @@ footer .footer-bar li:last-child a {
 
 - Now the footer styling matches the header styling on everthing except hover for nested submenus. This is enough to get the point across
 
-
+!["Our theme at the end of vid 5 of the Mr Digital tutorial"](../images/screen-hkkb--01--tutwrk--mr-digital--wp-theme-scratch.jpg)
+*Our theme at the end of vid 5 of the Mr Digital tutorial*
 
 
 
