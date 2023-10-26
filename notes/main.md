@@ -968,6 +968,10 @@ footer .footer-bar li:last-child a {
 
 - Create 3 tags **test1, test2, test3**
 
+- INSTALL and activate plugin: Duplicate Post
+
+#### #TIP - The plugin name in 2023 is called "Yoast Duplicate Post"
+
 
 
 
