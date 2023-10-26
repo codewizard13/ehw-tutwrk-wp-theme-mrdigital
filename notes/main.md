@@ -910,7 +910,7 @@ footer .footer-bar li:last-child a {
 #### #TIP - Clear local changes for a single file with `git restore [filename]` (Source: https://www.git-tower.com/learn/git/faq/git-discard-changes)
 
 
-
+### VID: 06 - Blog Archive, Posts, Pagination, Thumbnails
 
 
 
