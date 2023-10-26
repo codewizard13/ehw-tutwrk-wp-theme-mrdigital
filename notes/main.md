@@ -907,7 +907,7 @@ footer .footer-bar li:last-child a {
 !["Our theme at the end of vid 5 of the Mr Digital tutorial"](../images/screen-hkkb--01--tutwrk--mr-digital--wp-theme-scratch.jpg)
 *Our theme at the end of vid 5 of the Mr Digital tutorial*
 
-
+#### #TIP - Clear local changes for a single file with `git restore [filename]` (Source: https://www.git-tower.com/learn/git/faq/git-discard-changes)
 
 
 
