@@ -980,10 +980,45 @@ footer .footer-bar li:last-child a {
 
 #### #GOTCHA - On Blog page title is only showing "Test Post 2", but the content from all the posts is there.
 
+- Create new file **section-archive.php** in includes/
+- Copy all code from section-content.php -- this is known as the **loop**
+- In **archive.php** change the get_template_part() 2nd parameter from "content" to "archive" like this:
 
+```php
+<?php get_template_part('includes/section', 'archive'); ?>
+```
 
+- Move the `H1` post title code from archive.php into section-archive.php. These two files should now look like this:
 
+**archive.php**
 
+```php
+<?php get_header();  ?>
+
+<section class="page-wrap">
+<div class="container">
+  
+  <?php get_template_part('includes/section', 'archive'); ?>
+
+</div>
+</section>
+
+<?php get_footer();  ?>
+```
+
+**section-archive.php**
+
+```php
+<?php if( have_posts() ): while( have_posts() ): the_post(); ?>
+
+  <h1><?php the_title(); ?></h1>
+
+  <?php the_content(); ?>
+
+<?php endwhile; else: endif; ?>
+```
+
+#### #TIP - The code immediately above this tip is a basic WP posts "loop"
 
 
 
