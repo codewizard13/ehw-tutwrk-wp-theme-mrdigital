@@ -929,6 +929,72 @@ footer .footer-bar li:last-child a {
 └── Contact Us
 ```
 
+- Add the "Blog" **category** to menu structure after "Our Team" so it looks like this:
+
+```bash
+.
+├── Home
+├── About Us
+├── Our Team
+├── Blog
+└── Contact Us
+```
+
+- Now, we should have a link to the Blog category in the top bar menu
+
+#### #GOTCHA - Clicking on the Blog menu link will just show a blank page at this point
+
+- At this point, since Blog is category archive, it uses the default **archive.php** template
+
+- Let's start building archive.php by pasting in the code from page.php. So, the code we start with should look like this:
+
+```php
+<?php get_header();  ?>
+
+<section class="page-wrap">
+<div class="container">
+  
+  <h1><?php the_title(); ?></h1>
+
+  <?php get_template_part('includes/section', 'content'); ?>
+
+</div>
+</section>
+
+<?php get_footer();  ?>
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
