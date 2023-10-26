@@ -5,7 +5,6 @@
     wp_nav_menu(
       array(
         'theme_location' => 'footer-menu',
-        // 'menu' => 'Top Bar',
         'menu_class' => 'footer-bar',
       )
     );
