@@ -972,6 +972,14 @@ footer .footer-bar li:last-child a {
 
 #### #TIP - The plugin name in 2023 is called "Yoast Duplicate Post"
 
+- Duplicate the test post 4 times for a total of 5
+
+#### #TIP - DELETE the Hello World! default post. This probably should have been done at the very beginning of the tutorial.
+
+- Rename the post with sequential numbers so now we have Test Post 1, Test Post 2 ... Test Post 5
+
+#### #GOTCHA - On Blog page title is only showing "Test Post 2", but the content from all the posts is there.
+
 
 
 
