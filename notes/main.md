@@ -912,11 +912,22 @@ footer .footer-bar li:last-child a {
 
 ### VID: 06 - Blog Archive, Posts, Pagination, Thumbnails
 
+- WordPress started as a blogging platform and has evolved into a fully-fledged CMS
+- **single.php:** the core default template for all single post
 
+- Create **Test Post 1** in WP Admin Dashboard
+- Create category **Blog**
+- Assign category "Blog" to Test Post 1 and publish
 
+- Appearance > Menus make **Top Bar** menu as follows:
 
-
-
+```bash
+.
+├── Home
+├── About Us
+├── Our Team
+└── Contact Us
+```
 
 
 
