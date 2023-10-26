@@ -962,10 +962,11 @@ footer .footer-bar li:last-child a {
 </section>
 
 <?php get_footer();  ?>
-
 ```
 
+- Add some lorem (3 paragraphs) to Test Post 1 content editor
 
+- Create 3 tags **test1, test2, test3**
 
 
 
