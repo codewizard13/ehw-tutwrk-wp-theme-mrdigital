@@ -913,7 +913,18 @@ footer .footer-bar li:last-child a {
 ### VID: 06 - Blog Archive, Posts, Pagination, Thumbnails
 
 - WordPress started as a blogging platform and has evolved into a fully-fledged CMS
-- **single.php:** the core default template for all single post
+- **single.php:** the core default template for all standard single posts
+
+#### #GOTCHA: At 7:48 his is showing a page title when the post is clicked into by ours is showing nothing - Why? Because @ 00:57 he says let's grab the content from page.php -- but never actually does it on-screen! Instead, he switches gears and adds a bunch of posts in admin dashboard.
+
+#### #TIP: Copy contents of page.php to single.php before going further
+
+- The **single.php** file should now look like this:
+
+
+```php
+
+```
 
 - Create **Test Post 1** in WP Admin Dashboard
 - Create category **Blog**
@@ -1049,6 +1060,19 @@ footer .footer-bar li:last-child a {
 ![Blog list layout with Bootstrap styling](../images/screen-hkkb--05--tutwrk--mr-digital--wp-theme-scratch.jpg)
 
 _Blog list layout with Bootstrap styling_
+
+
+- When we click the top "Read more" link we should see the post title and content
+
+![Single blog post layout for Test Post 2](../images/screen-hkkb--06--tutwrk--mr-digital--wp-theme-scratch.jpg)
+_Single blog post layout for Test Post 2_
+
+
+Stopped @@ 08:45
+
+Next is adding previous and next pagination
+
+
 
 
 
