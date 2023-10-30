@@ -4,4 +4,6 @@
 
   <?php the_excerpt(); ?>
 
+  <a href="<?php the_permalink(); ?>">Read more</a>
+
 <?php endwhile; else: endif; ?>
