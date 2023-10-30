@@ -1020,7 +1020,7 @@ footer .footer-bar li:last-child a {
 
 #### #TIP - The code immediately above this tip is a basic WP posts "loop"
 
-
+#### #GOTCHA - The whole blog post is showing in the post list, but we need the excerpt to show instead
 
 
 
