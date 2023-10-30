@@ -1022,7 +1022,33 @@ footer .footer-bar li:last-child a {
 
 #### #GOTCHA - The whole blog post is showing in the post list, but we need the excerpt to show instead
 
+- Replace the_content() in **section-archive.php** with `the_content()`
+- Add a "read more" link with `the_permalink()`
+- Style as row cards with Bootstrap classes
+- Style link as button with bootstrap. Final result code for section-archive.php:
 
+```php
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+
+    <div class="card mb-3">
+
+      <div class="card-body">
+
+        <h3><?php the_title(); ?></h3>
+        <?php the_excerpt(); ?>
+
+        <a href="<?php the_permalink(); ?>">Read more</a>
+
+      </div>
+
+    </div>
+
+<?php endwhile; else : endif; ?>
+```
+
+![Blog list layout with Bootstrap styling](../images/screen-hkkb--05--tutwrk--mr-digital--wp-theme-scratch.jpg)
+
+_Blog list layout with Bootstrap styling_
 
 
 
