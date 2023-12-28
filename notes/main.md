@@ -1068,9 +1068,16 @@ _Blog list layout with Bootstrap styling_
 _Single blog post layout for Test Post 2_
 
 
-Stopped @@ 08:45
+#### @@ 8:54 - Pagination
 
-Next is adding previous and next pagination
+- We can use WP built-in pagination functionality
+- 2 ways to paginate:
+  - Show before, prev, and next link
+  - Show a bunch of number to take you to that specific page
+
+- In the archive it needs to be outside of the loop (in **archive.php**)
+
+
 
 
 
