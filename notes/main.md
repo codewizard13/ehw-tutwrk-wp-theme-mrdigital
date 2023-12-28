@@ -1078,7 +1078,7 @@ _Single blog post layout for Test Post 2_
 - In the archive it needs to be outside of the loop (in **archive.php**)
 
 
-
+#### #GOTCHA: Tried styling the notes/main.md background white and color black then realized it wasn't that simple. Reinstalled VSCode Extension: Markdown Preview Github Styling. Will just need to enable/disable the plugin as needed.
 
 
 
