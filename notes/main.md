@@ -1090,8 +1090,8 @@ _Single blog post layout for Test Post 2_
   
   <?php get_template_part('includes/section', 'archive'); ?>
 
-  <?php previous_post_link(); ?>
-  <?php next_post_link(); ?>
+  <?php previous_posts_link(); ?>
+  <?php next_posts_link(); ?>
 
 </div>
 </section>
@@ -1105,7 +1105,7 @@ _Single blog post layout for Test Post 2_
   - Dashboard > Settings > Reading > Blog pages to show at most: **3**
 
 
-
+#### #TIP: Make sure that posts is plural as in "previous_posts_link" instead of "previous_post_link"
 
 
 
