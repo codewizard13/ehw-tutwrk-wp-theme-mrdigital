@@ -63,7 +63,7 @@
         >
             <div class="github-markdown-content"><link rel="stylesheet" href="../css/notes.css" />
 <h1 id="tutorial-notes">TUTORIAL NOTES</h1>
-<p><a class="bookmark-link" href="#bookmark">JUMP TO BOOKMARK</a></p>
+<p><a id="top-bookmark-btn" class="bookmark-link" href="#bookmark">JUMP TO BOOKMARK</a></p>
 <h3 id="vid-01-02">VID: 01-02</h3>
 <ul>
 <li>screenshot.png = 1200x900</li>
@@ -1159,8 +1159,36 @@ Template Name: Contact Us
 </li>
 </ul>
 <h4 id="gotcha-tried-styling-the-notesmainmd-background-white-and-color-black-then-realized-it-wasnt-that-simple-reinstalled-vscode-extension-markdown-preview-github-styling-will-just-need-to-enabledisable-the-plugin-as-needed">#GOTCHA: Tried styling the notes/main.md background white and color black then realized it wasn't that simple. Reinstalled VSCode Extension: Markdown Preview Github Styling. Will just need to enable/disable the plugin as needed.</h4>
+<ul>
+<li>in <strong>archive.php</strong> add <strong>previous_posts_link()</strong> and <strong>next_posts_link()</strong>:</li>
+</ul>
+<pre><code class="language-php"><span class="hljs-meta">&lt;?php</span> <span class="hljs-title function_ invoke__">get_header</span>();  <span class="hljs-meta">?&gt;</span>
+
+&lt;section <span class="hljs-class"><span class="hljs-keyword">class</span>=&quot;<span class="hljs-title">page</span>-<span class="hljs-title">wrap</span>&quot;&gt;
+&lt;<span class="hljs-title">div</span> <span class="hljs-title">class</span>=&quot;<span class="hljs-title">container</span>&quot;&gt;
+  
+  &lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_template_part</span>(&#x27;<span class="hljs-title">includes</span>/<span class="hljs-title">section</span>&#x27;, &#x27;<span class="hljs-title">archive</span>&#x27;); ?&gt;
+
+  &lt;?<span class="hljs-title">php</span> <span class="hljs-title">previous_posts_link</span>(); ?&gt;
+  &lt;?<span class="hljs-title">php</span> <span class="hljs-title">next_posts_link</span>(); ?&gt;
+
+&lt;/<span class="hljs-title">div</span>&gt;
+&lt;/<span class="hljs-title">section</span>&gt;
+
+&lt;?<span class="hljs-title">php</span> <span class="hljs-title">get_footer</span>();  ?&gt;
+</span></code></pre>
+<h4 id="gotcha-no-pagination-appears-on-the-posts-page-because-we-havent-set-a-limit-yet">#GOTCHA: No pagination appears on the posts page because we haven't set a limit yet.</h4>
+<ul>
+<li>Set posts limit to 3:
+<ul>
+<li>Dashboard &gt; Settings &gt; Reading &gt; Blog pages to show at most: <strong>3</strong></li>
+</ul>
+</li>
+</ul>
+<h4 id="tip-make-sure-that-posts-is-plural-as-in-previous_posts_link-instead-of-previous_post_link">#TIP: Make sure that posts is plural as in &quot;previous_posts_link&quot; instead of &quot;previous_post_link&quot;</h4>
+<h4 id="-1035----stopped----122923">@@ 10:35 -- STOPPED -- 12/29/23</h4>
 <h2 id="bookmark">BOOKMARK</h2>
-<hr>
+<h2 id="bookmark-1"><a id="BOOKMARK" href="#top-bookmark-btn"><h2>BOOKMARK</h2></a></h2>
 </div>
         </div>
 </div>

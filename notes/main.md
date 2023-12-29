@@ -2,7 +2,7 @@
 
 # TUTORIAL NOTES
 
-<a class="bookmark-link" href="#bookmark">JUMP TO BOOKMARK</a>
+<a id="top-bookmark-btn" class="bookmark-link" href="#bookmark">JUMP TO BOOKMARK</a>
 
 
 ### VID: 01-02
@@ -1132,6 +1132,5 @@ _Single blog post layout for Test Post 2_
 
 
 
-## BOOKMARK
-
+<a id="bookmark" href="#top-bookmark-btn" title="back to top">BOOKMARK</a>
 ---
