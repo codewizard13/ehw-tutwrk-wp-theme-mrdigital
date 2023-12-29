@@ -1080,9 +1080,29 @@ _Single blog post layout for Test Post 2_
 
 #### #GOTCHA: Tried styling the notes/main.md background white and color black then realized it wasn't that simple. Reinstalled VSCode Extension: Markdown Preview Github Styling. Will just need to enable/disable the plugin as needed.
 
+- in **archive.php** add **previous_posts_link()** and **next_posts_link()**:
 
+```php
+<?php get_header();  ?>
 
+<section class="page-wrap">
+<div class="container">
+  
+  <?php get_template_part('includes/section', 'archive'); ?>
 
+  <?php previous_post_link(); ?>
+  <?php next_post_link(); ?>
+
+</div>
+</section>
+
+<?php get_footer();  ?>
+```
+
+#### #GOTCHA: No pagination appears on the posts page because we haven't set a limit yet.
+
+- Set posts limit to 3:
+  - Dashboard > Settings > Reading > Blog pages to show at most: **3**
 
 
 
