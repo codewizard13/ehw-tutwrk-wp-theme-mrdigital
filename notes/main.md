@@ -1108,9 +1108,24 @@ _Single blog post layout for Test Post 2_
 #### #TIP: Make sure that posts is plural as in "previous_posts_link" instead of "previous_post_link"
 
 
-#### @@ 10:35 -- STOPPED -- 12/29/23
+- Pagination Method 2:
 
+  - Paginates with page numbers so you can navigate more quickly
+  - Put the following code in **archive.php** under the get_template_part():
 
+```php
+  global $wp_query;
+
+  $big = 999999999; // need an unlikely integer
+
+  echo paginate_links([
+    'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+    'format' => '?paged=%#%',
+    'current' => max( 1, get_query_var( 'paged' ) ),
+    'total' => $wp_query->max_num_pages
+  ]);
+  ?>
+```
 
 
 
