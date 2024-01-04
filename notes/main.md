@@ -1200,8 +1200,15 @@ _Single blog post layout for Test Post 2_
   <p>Posted by: <?php echo $fname; ?> <?php echo $lname; ?></p>
 ```
 
+- To add publish date of the post to top of blog post add this code before the_content():
 
+```php
+  <?php echo get_the_date('d/m/Y h:i:s'); ?>
+```
 
+![Author at bottom and date/time at top](../images/screen-hkkb--09--tutwrk--mr-digital--wp-theme-scratch--section-blogcontent.jpg)
+
+*Blog post (section-blogcontent.php) with author bottom and date top*
 
 
 

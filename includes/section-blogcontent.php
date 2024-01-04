@@ -1,5 +1,7 @@
 <?php if ( have_posts() ): while( have_posts() ): the_post(); ?>
 
+  <?php echo get_the_date('d/m/Y h:i:s'); ?>
+
   <?php the_content(); ?>
 
   <?php 
