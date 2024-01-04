@@ -1143,8 +1143,13 @@ _Single blog post layout for Test Post 2_
 <p class="code-filename">category-blog.php</p>
 
 - clone archive.php -> **category-blog.php**
+- Because of WP template hierarchy all posts with category of 'blog' will automatically be handled by **category-blog.php**
+- If we had a category of 'dogs' we could make a custom archive page **category-dogs.php**
 
 
+---
+
+<p class="code-filename">single.php</p>
 
 
 
