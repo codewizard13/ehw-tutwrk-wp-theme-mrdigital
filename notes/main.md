@@ -1210,7 +1210,7 @@ _Single blog post layout for Test Post 2_
 
 *Blog post (section-blogcontent.php) with author bottom and date top*
 
-
+- More options for PHP date/time formats here: https://www.php.net/manual/en/datetime.format.php
 
 
 

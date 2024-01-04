@@ -1,6 +1,6 @@
 <?php if ( have_posts() ): while( have_posts() ): the_post(); ?>
 
-  <?php echo get_the_date('d/m/Y h:i:s'); ?>
+  <?php echo get_the_date('l jS F, Y'); ?>
 
   <?php the_content(); ?>
 
