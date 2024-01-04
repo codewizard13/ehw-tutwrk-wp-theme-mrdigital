@@ -7,6 +7,10 @@
 | Version       | 00.01.00                                |
 | Programmer    | **Eric Hepperle**                       |
 
+### GITHUB REPO
+
+- https://github.com/codewizard13/ehw-tutwrk-wp-theme-mrdigital
+
 ### TECHNOLOGIES
 
 <img align="left" alt="WordPress" title="WordPress" width="26px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" style="padding-right:10px;" />
