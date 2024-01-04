@@ -1151,10 +1151,18 @@ _Single blog post layout for Test Post 2_
 
 <p class="code-filename">single.php</p>
 
+- single.php starts with same code as page.php
+- Create separate section (template-part) for blog posts: **includes/section-blogcontent.php**
 
 
+<p class="code-filename">section-blogcontent.php</p>
 
+- Create blank file
+- Paste loop in. Now it looks like this:
 
+```php
+
+```
 
 
 
