@@ -1160,11 +1160,17 @@ _Single blog post layout for Test Post 2_
 - Create blank file
 - Paste loop in. Now it looks like this:
 
-```php
+**The Loop:**
 
+```php
+<?php if ( have_posts() ): while( have_posts() ): the_post(): ?>
+
+  <?php the_content(); ?>
+
+<?php endwhile; else: endif; ?>
 ```
 
-
+- In single.php change 'content' to 'blogcontent'
 
 
 
