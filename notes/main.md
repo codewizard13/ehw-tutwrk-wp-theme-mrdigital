@@ -1172,7 +1172,22 @@ _Single blog post layout for Test Post 2_
 
 - In single.php change 'content' to 'blogcontent'
 
+- Get author details inside the loop so that WP already knows the post ID
+- Use the **get_the_author_meta()** function to grab user/author details
 
+```php
+<?php if ( have_posts() ): while( have_posts() ): the_post(); ?>
+
+  <?php the_content(); ?>
+
+  <?php 
+    $fname = get_the_author_meta('first_name');
+    $lname = get_the_author_meta('last_name');
+    echo $fname . ' ' . $lname;
+  ?>
+
+<?php endwhile; else: endif; ?>
+```
 
 
 
