@@ -5,29 +5,29 @@ STYLES for: tutorial notes
 */
 
 .error {
-	color: brown;
-	font-weight: bold;
-	background: pink;
-	padding: 2rem;
+  color: brown;
+  font-weight: bold;
+  background: pink;
+  padding: 2rem;
 }
 .bookmark-link {
-    background: orange !important;
-    padding: .4rem 1rem;
-    border: solid 1px brown;
-    color: white;
-    font-weight: 700;
+  background: orange !important;
+  padding: 0.4rem 1rem;
+  border: solid 1px brown;
+  color: white;
+  font-weight: 700;
 }
 h3[id^="vid"] {
   background: olive;
   color: white;
-  padding: .3rem 1rem
+  padding: 0.3rem 1rem;
 }
 #bookmark {
   background: orange;
   display: inline-block;
   padding: 1rem;
   border: solid green 4px;
-  transform: skew(20deg)
+  transform: skew(20deg);
 }
 /* H6 is reserved for definitions */
 h6 {
@@ -36,7 +36,6 @@ h6 {
   border-radius: 1rem;
   background: #ffffe3;
 }
-
 
 /* H4 will be for messages, tips, warnings, timestamps, etc.
    This is the base message format.
@@ -65,4 +64,32 @@ h4[id^="tip"] {
 h4[id*="---"] {
   background: bisque;
   padding: 1rem;
+}
+
+
+/* Filename formatting */
+.code-filename {
+  background: beige;
+  min-height: 1rem;
+  display: inline-block;
+  border: solid black 2px;
+  padding: 0.3rem;
+  color: black;
+  font-weight: 500;
+  padding-right: 1rem;
+  border-radius: 0 5px 5px 0;
+  border-left: none !important;
+  padding-left: 0;
+  margin-top: 2rem;
+}
+
+.code-filename::before {
+  font-family: FontAwesome;
+  content: "\f15c";
+  padding: 0.3rem 0.6rem;
+  background: black;
+  color: white;
+  margin: 0;
+  padding: 0.5rem 0.7rem;
+  margin-right: 0.8rem;
 }

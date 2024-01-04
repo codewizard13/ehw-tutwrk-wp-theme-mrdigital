@@ -1132,7 +1132,15 @@ _Single blog post layout for Test Post 2_
 ---
 
 
+#### #TIP: This is now our standard archive template. To make new archive template:
 
+- The name of our current category is 'blog'
+
+#### #TIP: We have a category of 'blog' assigned, rather than assigning the posts list page as blog in Settings > Reading
+
+<br><br>
+
+<p class="code-filename">category-blog.php</p>
 
 
 
