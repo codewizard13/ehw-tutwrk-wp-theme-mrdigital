@@ -1127,6 +1127,10 @@ _Single blog post layout for Test Post 2_
   ?>
 ```
 
+- #GOTCHA: Changed back to simple version with previous/next post links to follow tutorial
+
+---
+
 
 
 
