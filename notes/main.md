@@ -1213,10 +1213,20 @@ _Single blog post layout for Test Post 2_
 - More options for PHP date/time formats here: https://www.php.net/manual/en/datetime.format.php
 
 
+- Add this code below the "posted by" section:
+
+```php
+<?php
+$tags = get_the_tags();
+foreach ( $tags as $tag ): ?>
+
+  <a href="<?php echo get_tag_link( $tag->term_id ); ?>"><?php echo $tag->name; ?></a>
+
+<?php endforeach; ?>
+```
 
 
-
-
+#### @@ - 23:00 - STOPPED
 
 
 
