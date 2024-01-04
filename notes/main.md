@@ -1142,7 +1142,7 @@ _Single blog post layout for Test Post 2_
 
 <p class="code-filename">category-blog.php</p>
 
-
+- clone archive.php -> **category-blog.php**
 
 
 
