@@ -1189,6 +1189,64 @@ _Single blog post layout for Test Post 2_
 <?php endwhile; else: endif; ?>
 ```
 
+- Group the variable definitions and add a "posted by" line:
+
+```php
+  <?php 
+    $fname = get_the_author_meta('first_name');
+    $lname = get_the_author_meta('last_name');
+  ?>
+
+  <p>Posted by: <?php echo $fname; ?> <?php echo $lname; ?></p>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
