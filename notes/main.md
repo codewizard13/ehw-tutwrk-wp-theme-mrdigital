@@ -1228,9 +1228,38 @@ foreach ( $tags as $tag ): ?>
 
 #### @@ - 23:00 - STOPPED
 
+- REPLACED Trump Ipsum on homepage with Carl Sagan ipsum 
+- I added lorem ipsum from https://saganipsum.com/
 
+> Encyclopaedia galactica descended from astronomers decipherment gathered by gravity consciousness vanquish the impossible. Hundreds of thousands finite but unbounded great turbulent clouds another world not a sunrise but a galaxyrise preserve and cherish that pale blue dot. White dwarf radio telescope with pretty stories for which there's little good evidence preserve and cherish that pale blue dot the ash of stellar alchemy two ghostly white figures in coveralls and helmets are softly dancing?
+> 
+> Two ghostly white figures in coveralls and helmets are softly dancing a billion trillion rich in heavy atoms permanence of the stars bits of moving fluff finite but unbounded. How far away not a sunrise but a galaxyrise dream of the mind's eye tesseract star stuff harvesting star light are creatures of the cosmos. Made in the interiors of collapsing stars a very small stage in a vast cosmic arena ship of the imagination Sea of Tranquility cosmic ocean cosmic ocean.
+> 
+> Billions upon billions invent the universe Drake Equation culture tingling of the spine a very small stage in a vast cosmic arena. Rig Veda rich in mystery bits of moving fluff a still more glorious dawn awaits star stuff harvesting star light cosmic ocean. Preserve and cherish that pale blue dot a mote of dust suspended in a sunbeam tendrils of gossamer clouds network of wormholes vastness is bearable only through love take root and flourish and billions upon billions upon billions upon billions upon billions upon billions upon billions.
+>
 
+- Ran that lorem through www.loremipzum.com to add headers, links, unordered lists, etc. Then tweaked to create this resulting dummy lorem text:
 
+<h2>A inven little eye stellar permanence a cherish another.</h2>
+
+Lorem ipsum dolor sit amet. In another mind's of cherish gathereda coveralls of inven light the tesseract ghostly. A star clouds <strong>And coveralls</strong> are heavy there's. Of stuff small in blue galactica
+
+<blockquote cite="https://www.loremipzum.com">
+  The interiors ghostly in decipherment good the world gravity Sea ocean
+  vanquish in hundreds clouds of blue figures!
+</blockquote>
+
+<h4>The vanquish telescope the descended Tranquility ash billion escended!</h4>
+
+A cosmic stories <em>A rich and cosmic descended a that stars</em> a interiors sunrise a radio star. The preserve little but stage cosmos and
+billions galactica. In coveralls consciousness <a href="https://www.loremipzum.com" target="_blank" rel="noopener">Of hundreds</a> and sunrise hundreds.
+
+<ul>
+  <li>Of white dancing of decipherment softly.</li>
+  <li>And Tranquility evidence a ocean moving are star upon.</li>
+</ul>
+
+---
 
 
 
