@@ -1240,6 +1240,8 @@ foreach ( $tags as $tag ): ?>
 
 - Ran that lorem through www.loremipzum.com to add headers, links, unordered lists, etc. Then tweaked to create this resulting dummy lorem text:
 
+![Homepage with Sagan ipsum](../images/screen-tutwrk--mr-digital--wp-theme-scratch--11---pg-home--lorem-sagan.jpg)
+
 <h2>A inven little eye stellar permanence a cherish another.</h2>
 
 Lorem ipsum dolor sit amet. In another mind's of cherish gathereda coveralls of inven light the tesseract ghostly. A star clouds <strong>And coveralls</strong> are heavy there's. Of stuff small in blue galactica
