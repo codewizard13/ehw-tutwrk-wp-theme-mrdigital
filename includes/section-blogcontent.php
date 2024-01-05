@@ -25,10 +25,14 @@
   <?php endforeach; ?>
 
   <?php foreach ( $categories as $category): ?>
+
     <a href="<?php echo get_category_link( $category->term_id ); ?>">
       <?php echo $category->name; ?>
     </a>
 
   <?php endforeach; ?>
-  
+
+  <?php comments_template(); ?>
+
+
 <?php endwhile; else: endif; ?>

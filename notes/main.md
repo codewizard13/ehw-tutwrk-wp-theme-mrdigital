@@ -1316,7 +1316,17 @@ $categories = get_categories();
 
 - Add same statement in category-blog.php
 
+---
 
+- Add comments section in blogcontent loop (section-blogcontent.php) under the categories foreach:
+
+```php
+  <?php comments_template(); ?>
+```
+
+- Post reply "Test" as logged in user on Test Post 2:
+
+![Comment form added to blog posts](../images/screen-tutwrk--mr-digital--wp-theme-scratch--13---test-post-2--comment.jpg)
 
 
 #### @@ - 23:45 - STOPPED
