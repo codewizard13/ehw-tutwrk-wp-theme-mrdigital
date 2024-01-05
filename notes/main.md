@@ -1306,6 +1306,13 @@ $categories = get_categories();
 
 #### #GOTCHA: Instructor uses get_the_category() instead of get_categories() and it still works.
 
+- Add archive name to top of archive in archive.php above the get_template_part:
+
+```php
+  <h1><?php echo single_cat_title() ?></h1>
+  
+  <?php get_template_part('includes/section', 'archive'); ?>
+```
 
 
 
