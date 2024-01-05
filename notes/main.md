@@ -1318,6 +1318,8 @@ $categories = get_categories();
 
 ---
 
+#### @@ - 27:00 - ADD COMMENTS section to blog posts
+
 - Add comments section in blogcontent loop (section-blogcontent.php) under the categories foreach:
 
 ```php
@@ -1328,8 +1330,52 @@ $categories = get_categories();
 
 ![Comment form added to blog posts](../images/screen-tutwrk--mr-digital--wp-theme-scratch--13---test-post-2--comment.jpg)
 
+- Disable comments section for now
 
-#### @@ - 23:45 - STOPPED
+#### #TIP: ALT-SHIFT-P creates a page break in WordPress admin editor (Not to be confused with "Read More" tag)
+
+- #TIP: You can also manually add page break in text mode by typing `<!--nextpage-->`
+
+#### GOTCHA: After adding page breaks to a post and updating, nothing happens!
+
+- Add wp_link_pages() to bottom of single.php to create pagination in a single blog post. It works by creating a pseudo-page everywhere there is a page break in the current post:
+
+```php
+<?php get_template_part('includes/section', 'blogcontent'); ?>
+
+<?php wp_link_pages(); ?>
+```
+
+![Add pseudo-pagination to a single post with page breaks and wp_link_pages()](../images/screen-tutwrk--mr-digital--wp-theme-scratch--14---test-post-2--page-break-pagination.jpg)
+
+
+
+
+#### @@ - 30:54 - STOPPED
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
