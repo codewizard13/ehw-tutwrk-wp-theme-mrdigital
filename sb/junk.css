@@ -1,0 +1,9 @@
+
+/* BLOCKQUOTE: Default */
+
+blockquote, bq {
+  border-left: solid #333 6px;
+  padding: 0 1rem;
+  margin: 1rem;
+}
+
