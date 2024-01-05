@@ -1276,6 +1276,7 @@ billions galactica. In coveralls consciousness <a href="https://www.loremipzum.c
 ![Tags styled as green buttons in blog posts](../images/screen-tutwrk--mr-digital--wp-theme-scratch--12---bootstrap-style-on-tags-in-blogcontent.jpg)
 
 
+[Bootstrap 5: Badge](https://getbootstrap.com/docs/5.0/components/badge/)
 
 
 
@@ -1285,8 +1286,7 @@ billions galactica. In coveralls consciousness <a href="https://www.loremipzum.c
 
 
 
-
-#### @@ - 23:00 - STOPPED
+#### @@ - 23:45 - STOPPED
 
 
 
