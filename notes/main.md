@@ -1314,6 +1314,8 @@ $categories = get_categories();
   <?php get_template_part('includes/section', 'archive'); ?>
 ```
 
+- Add same statement in category-blog.php
+
 
 
 
