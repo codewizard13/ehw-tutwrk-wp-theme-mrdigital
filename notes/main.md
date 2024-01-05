@@ -1276,11 +1276,35 @@ billions galactica. In coveralls consciousness <a href="https://www.loremipzum.c
 ![Tags styled as green buttons in blog posts](../images/screen-tutwrk--mr-digital--wp-theme-scratch--12---bootstrap-style-on-tags-in-blogcontent.jpg)
 
 
-[Bootstrap 5: Badge](https://getbootstrap.com/docs/5.0/components/badge/)
+- [Bootstrap 5: Badge](https://getbootstrap.com/docs/5.0/components/badge/)
 
 
+---
 
+- Add categories to blogcontent:
 
+```php
+<?php
+$categories = get_categories();
+?>
+
+<?php foreach ( $tags as $tag ): ?>
+
+  <a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="badge bg-success">
+    <?php echo $tag->name; ?>
+  </a>
+
+<?php endforeach; ?>
+
+<?php foreach ( $categories as $category): ?>
+  <a href="<?php echo get_category_link( $category->term_id ); ?>">
+    <?php echo $category->name; ?>
+  </a>
+
+<?php endforeach; ?>
+```
+
+#### #GOTCHA: Instructor uses get_the_category() instead of get_categories() and it still works.
 
 
 
