@@ -1224,9 +1224,7 @@ foreach ( $tags as $tag ): ?>
 
 <?php endforeach; ?>
 ```
-
-
-#### @@ - 23:00 - STOPPED
+---
 
 - REPLACED Trump Ipsum on homepage with Carl Sagan ipsum 
 - I added lorem ipsum from https://saganipsum.com/
@@ -1263,6 +1261,17 @@ billions galactica. In coveralls consciousness <a href="https://www.loremipzum.c
 
 ---
 
+- In test post 2 add another tag **test5**. Observe on Test Post 2 post that the new tag shows up :)
+
+#### #GOTCHA: Instructor is using Bootstrap 4, however in Bootsrap 5 'bg-success' must be used instead of 'badge-success'.
+
+- Add `class="badge bg-success"` to section-blogcontent.php to style tags as green buttons
+
+```php
+    <a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="badge bg-success">
+      <?php echo $tag->name; ?>
+    </a>
+```
 
 
 
@@ -1277,24 +1286,7 @@ billions galactica. In coveralls consciousness <a href="https://www.loremipzum.c
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#### @@ - 23:00 - STOPPED
 
 
 

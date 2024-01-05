@@ -15,7 +15,9 @@
   $tags = get_the_tags();
   foreach ( $tags as $tag ): ?>
 
-    <a href="<?php echo get_tag_link( $tag->term_id ); ?>"><?php echo $tag->name; ?></a>
+    <a href="<?php echo get_tag_link( $tag->term_id ); ?>" class="badge bg-success">
+      <?php echo $tag->name; ?>
+    </a>
   
   <?php endforeach; ?>
   
