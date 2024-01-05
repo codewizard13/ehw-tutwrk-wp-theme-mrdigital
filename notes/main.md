@@ -1273,7 +1273,7 @@ billions galactica. In coveralls consciousness <a href="https://www.loremipzum.c
     </a>
 ```
 
-
+![Tags styled as green buttons in blog posts](../images/screen-tutwrk--mr-digital--wp-theme-scratch--12---bootstrap-style-on-tags-in-blogcontent.jpg)
 
 
 
