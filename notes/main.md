@@ -1348,7 +1348,23 @@ $categories = get_categories();
 
 ![Add pseudo-pagination to a single post with page breaks and wp_link_pages()](../images/screen-tutwrk--mr-digital--wp-theme-scratch--14---test-post-2--page-break-pagination.jpg)
 
+---
 
+- I added some default styling for blockquotes to bottom of **main.css**:
+
+```css
+/* BLOCKQUOTE: Default */
+
+blockquote {
+  padding: .6rem 1rem .8rem 1rem;
+  margin: 1rem;
+  border: solid 1px;
+  border-left: solid #333 6px;
+  display: table;
+}
+```
+
+![Blockquote on homepage with default style applied](../images/screen-tutwrk--mr-digital--wp-theme-scratch--15---pg-home--blockquote-style.jpg)
 
 
 #### @@ - 30:54 - STOPPED
