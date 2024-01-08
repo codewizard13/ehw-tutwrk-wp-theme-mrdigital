@@ -1398,13 +1398,14 @@ add_theme_support('post-thumbnails');
 
   <?php if(has_post_thumbnail()): ?>
 
-    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-fluid">
+    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-fluid mb-3 img-thumbnail">
 
   <?php endif; ?>
 
   <h1><?php the_title(); ?></h1>
 ```
 
+#### #GOTCHA: Post thumbnail displays way too large in post
 
 
 
