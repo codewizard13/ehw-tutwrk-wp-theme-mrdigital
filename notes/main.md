@@ -1382,6 +1382,7 @@ add_theme_support('menus');
 add_theme_support('post-thumbnails');
 ```
 
+![Featured image section available after adding post-thumbnails support in functions.php](../images/screen-tutwrk--mr-digital--wp-theme-scratch--17--wpadmin-post--add-feat-img-thumb.jpg)
 
 
 
