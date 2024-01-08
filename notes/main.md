@@ -1367,13 +1367,20 @@ blockquote {
 ![Blockquote on homepage with default style applied](../images/screen-tutwrk--mr-digital--wp-theme-scratch--15---pg-home--blockquote-style.jpg)
 
 
-#### @@ - 30:54 - STOPPED
+#### @@ - 30:59 - ADD Image to Blog Post
 
 
+- ADD **post thumbnail**
 
+#### #GOTCHA: Nowhere currently in right post editor sidebar to select **featured image** (post thumbnail). Solve by adding "support".
 
+- In functions.php add support in the "Theme Options" section for post-thumnails:
 
-
+```php
+// Theme Options
+add_theme_support('menus');
+add_theme_support('post-thumbnails');
+```
 
 
 
