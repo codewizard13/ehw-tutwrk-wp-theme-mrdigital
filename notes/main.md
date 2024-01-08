@@ -1385,7 +1385,25 @@ add_theme_support('post-thumbnails');
 ![Featured image section available after adding post-thumbnails support in functions.php](../images/screen-tutwrk--mr-digital--wp-theme-scratch--17--wpadmin-post--add-feat-img-thumb.jpg)
 
 
+- Add a featured image
 
+#### #GOTCHA: Image doesn't show yet in post because we haven't added the code to display it yet.
+
+- Add code to template **single.php** to display thumbnail:
+
+
+```php
+<section class="page-wrap">
+<div class="container">
+
+  <?php if(has_post_thumbnail()): ?>
+
+    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>" class="img-fluid">
+
+  <?php endif; ?>
+
+  <h1><?php the_title(); ?></h1>
+```
 
 
 
