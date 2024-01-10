@@ -1407,7 +1407,78 @@ add_theme_support('post-thumbnails');
 
 #### #GOTCHA: Post thumbnail displays way too large in post
 
+#### @@ 34:38 - Create custom image sizes:
 
+- When you upload image to media gallery, WP automatically checks your **functions.php** to see what images sizes you want created
+
+#### #GOTCHA: You wouldn't want to load a 3MB image even if that's the size of the original image you uploaded. So, WP lets you register sizes to automatically generate image sizes you specify in the theme
+
+- At bottom of **functions.php**, add Custom Image Sizes code
+- **Hard Crop:** If you upload a large dimension image, that image will get cut out in the same place on every image. 
+
+#### #TIP: Set last parameter in **add_image_size()** function to true for hard crop, else false.
+
+```php
+// Custom Image Sizes
+add_image_size('blog-large', 800, 400, false);
+add_image_size('blog-small', 300, 200, true);
+```
+
+#### #GOTCHA: We've defined the image sizes to be created, but how do we tell WordPress to generate all those sizes for all the images already uploaded?
+
+#### #TIP: Add PLUGIN: Force Regenerate Thumbnails. THEN: Tools > Force Regenerate Thumbnails > Regenerate All Thumbnails
+
+#### #GOTCHA: Extra default image sizes being generated that aren't listed in functions.php, nor in Settings > Media
+
+https://quadlayers.com/remove-thumbnails-in-wordpress/
+
+
+
+#### #TIP #SOLVED: WordPress 5.3 introduced additional image sizes which can be found via /wp-includes/media.php
+
+- Update your function, like so, removed the extra sizes: [source](https://wordpress.stackexchange.com/questions/354378/wordpress-adding-scaled-images-that-dont-exist-1536x1536-and-2048x2048)
+
+```php
+function remove_default_image_sizes( $sizes) {
+    unset( $sizes['large']); // Added to remove 1024
+    unset( $sizes['thumbnail']);
+    unset( $sizes['medium']);
+    unset( $sizes['medium_large']);
+    unset( $sizes['1536x1536']);
+    unset( $sizes['2048x2048']);
+    return $sizes;
+}
+add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes');
+```
+
+- Another option: [source](https://wordpress.stackexchange.com/questions/354378/wordpress-adding-scaled-images-that-dont-exist-1536x1536-and-2048x2048)
+  
+> You could also remove those image sizes completely using remove_image_size (see: https://developer.wordpress.org/reference/functions/remove_image_size/)
+>
+> Example (to be placed in your functions.php file):
+
+```php
+remove_image_size('1536x1536');
+remove_image_size('2048x2048');
+```
+
+> This function, however, won't work for default WP image sizes (e.g. 'thumbnail', 'medium', 'large', etc.). There's a work-around though. Simply set the sizes to 0:
+
+```php
+update_option( 'thumbnail_size_h', 0 );
+update_option( 'thumbnail_size_w', 0 );
+update_option( 'medium_size_h', 0 );
+update_option( 'medium_size_w', 0 );
+update_option( 'medium_large_size_w', 0 );
+update_option( 'medium_large_size_h', 0 );
+update_option( 'large_size_h', 0 );
+update_option( 'large_size_w', 0 );
+```
+
+
+
+
+#### @@ 38:32 - STOPPED
 
 
 
