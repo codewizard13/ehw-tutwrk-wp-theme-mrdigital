@@ -51,3 +51,24 @@ register_nav_menus(
 // Custom Image Sizes
 add_image_size('blog-large', 800, 400, false);
 add_image_size('blog-small', 300, 200, true);
+
+remove_image_size('1536x1536');
+remove_image_size('2048x2048');
+remove_image_size('medium');
+remove_image_size('medium_large');
+
+update_option( 'medium_size_h', 0 );
+update_option( 'medium_size_w', 0 );
+update_option( 'medium_large_size_w', 0 );
+update_option( 'medium_large_size_h', 0 );
+
+function remove_default_image_sizes( $sizes) {
+  unset( $sizes['large']); // Added to remove 1024
+  unset( $sizes['thumbnail']);
+  unset( $sizes['medium']);
+  unset( $sizes['medium_large']);
+  unset( $sizes['1536x1536']);
+  unset( $sizes['2048x2048']);
+  return $sizes;
+}
+add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes', 20);

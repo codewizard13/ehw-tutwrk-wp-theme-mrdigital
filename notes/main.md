@@ -1475,7 +1475,31 @@ update_option( 'large_size_h', 0 );
 update_option( 'large_size_w', 0 );
 ```
 
+#### #GOTCHA: Althought the intructor recommends Force Renerated Thumbnails plugin I'm not seeing a significant advantage over Regnerate Thumbnails plugin.
 
+- **Regenerate Thumbnails** plugin shows you all registered image sizes on its main settings screen under **Tools > Regenerate Thumbnails**:
+
+![Regenerate Thumbnails plugin shows all registered thumbnail sizes, so no guesswork needed](/images/screen-tutwrk--mr-digital--wp-theme-scratch--19--regen-thumbs--current-registered-img-sizes.jpg) 
+
+
+#### #GOTCHA: Core images sizes are not removed with remove_image_size()!
+
+- Tried using **update_option()** for the core 'medium' and 'medium-large' sizes. No-go -- Sure, it zeroes out the size values but doesn't remove them from the interface.
+- Added the **remove_default_image_sizes()** function above to the bottom of functions.php. No-go
+
+#### #TIP #SOLVED: Added a priority of 20, as per [this WordPress.org forum post](https://wordpress.org/support/topic/deregister-image-sizes/?) to the add_filter() statement, causing it to run after sizes are registered by core like this:
+
+```php
+add_filter('intermediate_image_sizes_advanced', 'remove_default_image_sizes', 20);
+```
+
+![Plugin Regenerate Thumbnails shows that '1536x1536' are removed '2048x2048' and core sizes 'medium' and 'medium_large' are zeroed out](/images/screen-tutwrk--mr-digital--wp-theme-scratch--20--regen-thumbs--err--img-sizes-incorrect.jpg)
+
+_Plugin Regenerate Thumbnails shows that '1536x1536' are removed '2048x2048' and core sizes 'medium' and 'medium_large' are zeroed out_
+
+![Plugin FORCE Regenerate Thumbnails shows that on clicking the button, two core sizes were deleted and only the custom sizes added in functions.php are regenerated.](/images/screen-tutwrk--mr-digital--wp-theme-scratch--21--force-regen-thumbs--core-sizes-deleted-higher-prio.jpg)
+
+_Plugin FORCE Regenerate Thumbnails shows that on clicking the button, two core sizes were deleted and only the custom sizes added in functions.php are regenerated._
 
 
 #### @@ 38:32 - STOPPED
