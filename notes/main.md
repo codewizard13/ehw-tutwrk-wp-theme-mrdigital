@@ -1507,8 +1507,48 @@ _Plugin FORCE Regenerate Thumbnails shows that on clicking the button, two core 
 <img src="<?php the_post_thumbnail_url('blog-large'); ?> ...
 ```
 
+![Force 'blog-large' image size in blog posts](/images/screen-tutwrk--mr-digital--wp-theme-scratch--22--test-post-2--after-add-img-size-blog-large.jpg)
+
+#### #GOTCHA: Instructor points out that image appears to be scaled instead of cropped!
+
+#### #TIP #SOLVED: Change the third parameter on add_image_size('blog-large') from false to true and then click "Regenerate Thumbnails"
+
+```php
+add_image_size('blog-large', 800, 400, true);
+```
+
+#### #TIP: Setting false on add_image_size() will find a size that is <= your desired dimensions and it will scale the image proportionally
+
+![After changing add_image_size('blog-large') crop parameter to true](/images/screen-tutwrk--mr-digital--wp-theme-scratch--23--test-post-2--change-add-img-size-true.jpg)
+
+_After changing add_image_size('blog-large') crop parameter to true_
 
 
+#### #GOTCHA: Upon trying to export THIS .md file to HTML with MDExtended today, received this error:
+
+```cmd
+Cannot read properties of null (reading 'replace')
+TypeError: Cannot read properties of null (reading 'replace')
+	at normalize (c:\Users\erich\.vscode\extensions\jebbs.markdown-extended-1.1.3\node_modules\mimoza\index.js:32:21)
+	at Mimoza.getMimeType (c:\Users\erich\.vscode\extensions\jebbs.markdown-extended-1.1.3\node_modules\mimoza\index.js:158:21)
+	at Function._getMimeType [as getMimeType] (c:\Users\erich\.vscode\extensions\jebbs.markdown-extended-1.1.3\node_modules\mimoza\index.js:206:18)
+	at html5_embed_renderer (c:\Users\erich\.vscode\extensions\jebbs.markdown-extended-1.1.3\node_modules\markdown-it-html5-embed\lib\index.js:41:25)
+	at md.renderer.rules.image (c:\Users\erich\.vscode\extensions\jebbs.markdown-extended-1.1.3\node_modules\markdown-it-html5-embed\lib\index.js:108:14)
+	at s.renderInline (c:\Users\erich\.vscode\extensions\yzhang.markdown-all-in-one-3.6.1\dist\node\main.js:1:450022)
+	at s.render (c:\Users\erich\.vscode\extensions\yzhang.markdown-all-in-one-3.6.1\dist\node\main.js:1:450426)
+	at md.renderer.render (c:\Users\erich\.vscode\extensions\bierner.markdown-preview-github-styles-2.0.3\dist\extension.js:82:59)
+	at f.render (c:\Users\erich\.vscode\extensions\yzhang.markdown-all-in-one-3.6.1\dist\node\main.js:1:443558)
+	at renderHTML (c:\Users\erich\.vscode\extensions\jebbs.markdown-extended-1.1.3\out\src\services\exporter\shared.js:43:40)
+	at renderPage (c:\Users\erich\.vscode\extensions\jebbs.markdown-extended-1.1.3\out\src\services\exporter\shared.js:28:16)
+	at PuppeteerExporter.<anonymous> (c:\Users\erich\.vscode\extensions\jebbs.markdown-extended-1.1.3\out\src\services\exporter\puppeteer.js:63:48)
+	at Generator.next (<anonymous>)
+	at fulfilled (c:\Users\erich\.vscode\extensions\jebbs.markdown-extended-1.1.3\out\src\services\exporter\puppeteer.js:5:58)
+```
+
+- Attempted export of PDF instead and popup said required "Chromium" as a dependency so I confirmed to download and install
+- Tried reverting to older version of **Markdown Extended** - no-go - same error
+
+- Posted **#ISSUE** here: https://github.com/qjebbs/vscode-markdown-extended/issues/157
 
 
 #### @@ 38:32 - STOPPED
