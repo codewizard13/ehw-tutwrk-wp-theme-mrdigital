@@ -1501,20 +1501,17 @@ _Plugin Regenerate Thumbnails shows that '1536x1536' are removed '2048x2048' and
 
 _Plugin FORCE Regenerate Thumbnails shows that on clicking the button, two core sizes were deleted and only the custom sizes added in functions.php are regenerated._
 
+- Edit **single.php** to force a specific named image size ("blog-large") in blog posts:
+
+```php
+<img src="<?php the_post_thumbnail_url('blog-large'); ?> ...
+```
+
+
+
+
 
 #### @@ 38:32 - STOPPED
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
