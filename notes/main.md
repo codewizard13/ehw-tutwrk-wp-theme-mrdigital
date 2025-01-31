@@ -16,6 +16,8 @@ _**Preview of this notes file:**_
 
 ### VID: 01_07:15 - TIDY UP after fresh WP install!
 
+⚙️ DB:
+
 - Dismiss the welcome message
 - Screen Options: Hid all but "At a Glance"
 - Delete both default plugins
@@ -24,6 +26,15 @@ _**Preview of this notes file:**_
   - Remove site tagline
   - Change timezone
 - Settings > Permalinks: Post name
+
+### VID: 01_08:31 - ADD STARTER CONTENT
+
+- Create Page: Home
+  - No content yet
+- Settings > Reading > Your homepage displays > A static page: **Home**
+
+#### #RECOMMENDED PLUGIN: Classic Editor
+
 
 
 ### VID: 01-02
