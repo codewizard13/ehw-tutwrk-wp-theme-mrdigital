@@ -18,10 +18,17 @@ STYLES for: tutorial notes
   font-weight: 700;
 }
 h3[id^="vid"] {
-  background: rgb(99, 57, 177);
+  background: mediumslateblue;
+  border-left: solid 6px midnightblue;
   color: white;
   padding: 0.3rem 1rem;
 }
+h3[id^="vid"]::before {
+  content: '▶️';
+  padding-right: .6rem;
+}
+
+
 
 /* BOOKMARK */
 #bookmark {
