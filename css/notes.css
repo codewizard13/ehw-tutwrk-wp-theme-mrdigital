@@ -11,24 +11,35 @@ STYLES for: tutorial notes
   padding: 2rem;
 }
 .bookmark-link {
-  background: orange !important;
+  background: rgb(245, 76, 15) !important;
   padding: 0.4rem 1rem;
   border: solid 1px brown;
-  color: white;
+  color: aliceblue !important;
   font-weight: 700;
 }
 h3[id^="vid"] {
-  background: olive;
+  background: rgb(99, 57, 177);
   color: white;
   padding: 0.3rem 1rem;
 }
+
+/* BOOKMARK */
 #bookmark {
-  background: orange;
+  background: cadetblue;
   display: inline-block;
   padding: 1rem;
-  border: solid green 4px;
+  border: solid #dbdbdb 4px;
+  color: aliceblue;
   transform: skew(20deg);
 }
+
+#bookmark a,
+#bookmark a:visited {
+  color: aliceblue;
+}
+
+
+
 /* H6 is reserved for definitions */
 h6 {
   padding: 1rem;
