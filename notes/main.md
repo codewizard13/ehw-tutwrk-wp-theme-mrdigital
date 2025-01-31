@@ -10,7 +10,21 @@ _**Preview of this notes file:**_
 
 ## VID: 01
 
-#### @@ 01:03 - Install Laragon local server 
+### VID: 01_01:03 - Install Laragon local server
+
+- NOTE: We'll probably just use **LocalWP** or **WampServer** instead
+
+### VID: 01_07:15 - TIDY UP after fresh WP install!
+
+- Dismiss the welcome message
+- Screen Options: Hid all but "At a Glance"
+- Delete both default plugins
+- Delete deault "Hello World!" post
+- Settings > General:
+  - Remove site tagline
+  - Change timezone
+- Settings > Permalinks: Post name
+
 
 ### VID: 01-02
 
