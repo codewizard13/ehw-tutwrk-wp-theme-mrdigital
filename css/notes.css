@@ -17,6 +17,15 @@ STYLES for: tutorial notes
   color: aliceblue !important;
   font-weight: 700;
 }
+
+h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  background: cornflowerblue;
+  color: midnightblue;
+  padding: .8rem 1rem;
+  border-raidus: .4rem;
+}
+
 h3[id^="vid"] {
   background: mediumslateblue;
   border-left: solid 6px midnightblue;
