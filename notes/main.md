@@ -6,6 +6,8 @@
 
 ## VID: 01
 
+#### @@ 01:03 - Install Laragon local server 
+
 ### VID: 01-02
 
 - screenshot.png = 1200x900
