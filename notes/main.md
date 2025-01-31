@@ -4,6 +4,10 @@
 
 <a id="top-bookmark-btn" class="bookmark-link" href="#bookmark">JUMP TO BOOKMARK</a>
 
+_**Preview of this notes file:**_
+
+![](/images/screen-tutwrk--mr-digital--wp-theme-scratch--200---STARTING-OVER-notes-style.jpg)
+
 ## VID: 01
 
 #### @@ 01:03 - Install Laragon local server 
