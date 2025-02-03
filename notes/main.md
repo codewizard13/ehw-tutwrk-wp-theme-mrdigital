@@ -1,6 +1,8 @@
 <link rel="stylesheet" href="../css/notes.css" />
 
-# TUTORIAL NOTES
+### TUTORIAL NOTES
+
+# [WordPress Theme Development From Scratch (2019) [Mr Digital]](https://www.youtube.com/playlist?list=PLgFB6lmeXFOpHnNmQ4fdIYA5X_9XhjJ9d)
 
 <a id="top-bookmark-btn" class="bookmark-link" href="#bookmark">JUMP TO BOOKMARK</a>
 
@@ -19,9 +21,10 @@ _**Preview of this notes file:**_
 ⚙️ DB:
 
 - Dismiss the welcome message
-- Screen Options: Hid all but "At a Glance"
+- Screen Options: Hide all but "At a Glance"
 - Delete both default plugins
-- Delete deault "Hello World!" post
+- Delete default "Hello World!" post
+- Delete default pages
 - Settings > General:
   - Remove site tagline
   - Change timezone
@@ -1591,5 +1594,4 @@ TypeError: Cannot read properties of null (reading 'replace')
 #### #GOTCHA: STARTING OVER - Why? Because although the theme is transferrable, the database has to be exported and thus is missing.
 
 
-<a id="bookmark" href="#top-bookmark-btn" title="back to top">BOOKMARK</a>
 ---
